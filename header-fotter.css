@@ -85,7 +85,8 @@ nav {
   border-bottom: 1px solid var(--line);
   backdrop-filter: blur(10px);
 }
-.nav-inner {
+.nav-inner,
+.navigation-wraper {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -162,20 +163,95 @@ nav {
   stroke: none;
 }
 footer {
-	padding: 38px 0;
-	color: #85827b;
+  padding: 38px 0;
+  color: #85827b;
 }
 .footer-inner {
-	display: flex;
-	justify-content: space-between;
-	gap: 30px;
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
   align-items: center;
 }
 .footer-brand {
-	display: flex;
-	align-items: center;
-	gap: 15px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 .footer-inner strong {
-	color: var(--gold);
+  color: var(--gold);
+}
+
+.nav-toggler {
+  background: none;
+  box-shadow: none;
+  border: none;
+  display: none;
+}
+
+.nav-toggler svg {
+  fill: #fff;
+}
+
+.toggler-x-icon {
+  transform: rotate(90deg);
+  visibility: hidden;
+  width: 0px;
+  height: 0px;
+}
+
+.toggler-hamburg {
+  visibility: visible;
+  transition: transform 0.3s ease-in;
+  width: 30px;
+}
+
+body:has(.mobile-nav-active) .toggler-hamburg {
+  visibility: hidden;
+  transform: rotate(180deg);
+  width: 0px;
+}
+
+body:has(.mobile-nav-active) .toggler-x-icon {
+  visibility: visible;
+  width: 30px;
+  height: 30px;
+  transform: rotate(180deg);
+  transition: transform 0.3s ease-in;
+}
+
+.mobile-nav-active {
+  transform: translateX(0%) !important;
+  transition: all 0.3s ease-in;
+}
+
+@media (max-width: 1200px) {
+  .nav-toggler {
+    display: block;
+  }
+
+  .nav-links,
+  .navigation-wraper {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .footer-inner,
+  .footer-brand {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navigation-wraper {
+    transform: translateX(-100%);
+    transition: all 0.3s ease-in;
+    width: 100%;
+    padding: 40px 30px;
+    background-color: #000;
+    position: fixed;
+    height: 100vh;
+    top: 100px;
+    right: 0;
+    justify-content: left;
+    align-items: flex-start;
+    gap: 30px;
+  }
 }

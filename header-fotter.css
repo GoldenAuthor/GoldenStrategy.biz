@@ -1,0 +1,181 @@
+:root {
+  --black: #070707;
+  --ink: #10100f;
+  --gold: #cbaa4d;
+  --gold2: #e0c36f;
+  --white: #fff;
+  --muted: #bbb9b4;
+  --line: rgba(203, 170, 77, 0.34);
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  background: var(--black);
+  color: var(--white);
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+h1,
+h2,
+h3,
+h4,
+p {
+  margin-top: 0;
+}
+h1,
+h2,
+h3,
+h4 {
+  font-family: Georgia, "Times New Roman", serif;
+}
+.wrap {
+  width: min(1500px, 92vw);
+  margin: auto;
+}
+.eyebrow {
+  font-size: 0.76rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 800;
+}
+.gold {
+  color: var(--gold);
+}
+.serif {
+  font-family: Georgia, "Times New Roman", serif;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 54px;
+  padding: 0 26px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 0.76rem;
+  font-weight: 900;
+  letter-spacing: 0.13em;
+  border: 1px solid var(--gold);
+  transition: 0.2s;
+}
+.btn-primary {
+  background: var(--gold);
+  color: #080808;
+}
+.btn-primary:hover {
+  background: var(--gold2);
+}
+.btn-outline {
+  color: var(--gold);
+}
+.btn-outline:hover {
+  background: rgba(203, 170, 77, 0.09);
+}
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(7, 7, 7, 0.96);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(10px);
+}
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.brand {
+  font-family: Georgia, serif;
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 1rem;
+  font-weight: 800;
+}
+.nav-links {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0;
+  font-size: 12px;
+  font-weight: 800;
+}
+.nav-links a:hover {
+  color: var(--gold);
+}
+.golden-brand-lockup {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.golden-strategy-logo {
+  display: block;
+  max-width: 172px;
+  max-height: 102px;
+  object-fit: contain;
+}
+.nav-socials,
+.footer-socials {
+  display: flex;
+  gap: 9px;
+  align-items: center;
+}
+.nav-socials a,
+.footer-socials a {
+  width: 31px;
+  height: 31px;
+  border: 1px solid rgba(203, 170, 77, 0.65);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: var(--gold);
+}
+.nav-socials svg,
+.footer-socials svg {
+  width: 17px;
+  height: 17px;
+  fill: currentColor;
+  stroke: currentColor;
+  stroke-width: 1.6;
+}
+.nav-socials svg rect,
+.nav-socials svg circle:not(.solid),
+.footer-socials svg rect,
+.footer-socials svg circle:not(.solid) {
+  fill: none;
+}
+.nav-socials svg .solid,
+.footer-socials svg .solid {
+  fill: currentColor;
+  stroke: none;
+}
+footer {
+	padding: 38px 0;
+	color: #85827b;
+}
+.footer-inner {
+	display: flex;
+	justify-content: space-between;
+	gap: 30px;
+  align-items: center;
+}
+.footer-brand {
+	display: flex;
+	align-items: center;
+	gap: 15px;
+}
+.footer-inner strong {
+	color: var(--gold);
+}

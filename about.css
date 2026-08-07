@@ -1,0 +1,480 @@
+/* ******* Newsletter section css ****************** */
+
+.newsletter {
+  background: var(--gold);
+  color: #080808;
+  padding: 66px 0;
+}
+.newsletter-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 50px;
+  align-items: center;
+}
+.newsletter h2 {
+  font-size: clamp(2.2rem, 3.6vw, 4rem);
+}
+.newsletter p {
+  font-size: 1.16rem;
+  line-height: 1.6;
+  max-width: 700px;
+}
+.newsletter-form {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr auto;
+  gap: 10px;
+}
+.newsletter input {
+  min-height: 58px;
+  border: 0;
+  padding: 0 18px;
+  font: inherit;
+}
+.newsletter .btn {
+  background: #080808;
+  color: #fff;
+  border-color: #080808;
+}
+
+/* ******* about banner section css ****************** */
+
+.about-banner {
+  padding: 120px 0;
+  background-image: url(source-assets/about-banner.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+  position: relative;
+}
+.about-banner h2 {
+  font-size: clamp(2.25rem, 2.95vw, 3.72rem);
+  line-height: 1.03;
+  text-align: center;
+  text-transform: capitalize;
+  margin-bottom: 20px;
+}
+.about-banner p {
+  text-align: center;
+  color: #f2f1ee;
+  font-weight: 800;
+  font-size: 1.02rem;
+  width: 100%;
+  max-width: 550px;
+  margin: 0px auto;
+}
+.about-banner .btn {
+  margin-top: 50px;
+}
+.about-banner::after {
+  content: "";
+  background: #00000085;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+.about-banner .wrap {
+  position: relative;
+  z-index: 2;
+}
+
+/* ******* about tiffany section css ****************** */
+
+.about-tiffany {
+  padding: 90px 0px;
+}
+.about-tiffany .about-tiffany-grid {
+  display: grid;
+  gap: 70px;
+  grid-template-columns: auto auto;
+}
+.about-tiffany .about-tiffany-story h2 {
+  font-size: clamp(2.6rem, 4vw, 4.4rem);
+  line-height: 1.02;
+}
+.about-tiffany-story h3 {
+  font-size: clamp(1.35rem, 1.72vw, 1.9rem);
+  margin-bottom: 8px;
+}
+.about-tiffany-story h4 {
+  font-size: 1.38rem;
+  margin-bottom: 25px;
+}
+.about-tiffany .about-tiffany-story p {
+  color: #bdbbb6;
+  font-weight: 400;
+  font-size: 1.05rem;
+  line-height: 1.72;
+  margin-bottom: 50px;
+}
+.about-tiffany .about-tiffany-image img {
+  width: 100%;
+}
+
+/* ******* about prepared section css ****************** */
+
+.about-prepared {
+  padding: 40px 0px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.about-prepared .about-prepared-inner {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+.about-prepared .about-prepared-box {
+  padding: 20px 50px;
+  text-align: center;
+}
+.about-prepared .about-prepared-box h4 {
+  text-align: center;
+  line-height: 1.25;
+  font-size: 16px;
+  font-family: Georgia, "Times New Roman", serif;
+  margin-bottom: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.about-prepared .about-prepared-box p {
+  margin: 0;
+  color: #d0ceca;
+  line-height: 1.72;
+  font-size: 1.05rem;
+}
+.about-prepared .about-prepared-box .glyph {
+  width: 44px;
+  height: 44px;
+  margin: 0 auto 20px;
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold);
+  font-size: 18px;
+}
+
+.help-prepared {
+  padding: 90px 0px;
+}
+.help-prepared .eyebrow {
+  text-align: center;
+}
+.help-prepared h2 {
+  font-size: clamp(2.6rem, 4vw, 4.4rem);
+  margin-bottom: 20px;
+  text-align: center;
+}
+.help-prepared p {
+  color: #bdbbb6;
+  font-size: 1.44rem;
+  line-height: 1.72;
+  font-weight: 400;
+  text-align: center;
+}
+.help-prepared .about-prepared-inner {
+  margin-top: 60px;
+  grid-template-columns: repeat(3, 1fr);
+}
+.help-prepared .about-prepared-inner .about-prepared-box {
+  padding: 24px 26px;
+  border: 1px solid var(--line);
+}
+
+/* ******* founder section css ****************** */
+
+.founder {
+  padding: 60px 0px;
+  border-bottom: 1px solid var(--line);
+}
+.founder p {
+  font-style: italic;
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 1.5;
+  text-align: center;
+  font-family: Georgia, "Times New Roman", serif;
+  max-width: 700px;
+  margin: 0px auto 25px auto;
+}
+.founder .who {
+  text-align: center;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #d0ceca;
+}
+
+/* ******* about section css ****************** */
+
+.about {
+  padding: 90px 0px;
+  border-bottom: 1px solid var(--line);
+}
+.about-grid {
+  grid-template-columns: 58% 42%;
+  gap: 70px;
+  align-items: start;
+  display: grid;
+}
+.about h2 {
+  font-size: clamp(2.6rem, 4vw, 4.4rem);
+}
+.about-story p {
+  color: #bdbbb6;
+  font-weight: 400;
+  font-size: 1.05rem;
+  line-height: 1.72;
+}
+.expertise-panel {
+  margin-top: 132px;
+  align-self: start;
+  height: auto;
+  min-height: 0;
+  padding: 24px 26px;
+  border: 1px solid var(--line);
+  background: #0d0d0d;
+}
+.ip-title {
+  font-size: 1rem;
+  font-weight: 900;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.ip-title::before,
+.ip-title::after {
+  content: "✦";
+  color: var(--gold);
+  font-size: 1.05rem;
+}
+.expertise-panel .ip-list {
+  columns: 2;
+  gap: 24px;
+  list-style: none;
+  padding: 0;
+  margin: 18px 0 28px;
+}
+.ip-list li {
+  break-inside: avoid;
+  padding: 9px 0;
+  border-bottom: 1px solid rgba(203, 170, 77, 0.16);
+  font-weight: 800;
+}
+.credentials-title {
+  text-align: center;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+.credentials-title::before,
+.credentials-title::after {
+  content: "✦";
+  font-size: 1.05rem;
+  color: var(--gold);
+}
+.credentials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 9px;
+  margin-top: 16px;
+}
+.credential {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  line-height: 1.25;
+  min-height: 78px;
+  border: 1px solid rgba(203, 170, 77, 0.28);
+  padding: 12px 14px;
+  font-family: Georgia, serif;
+  font-weight: 700;
+}
+.about .verified-bio-bold {
+  color: #fff;
+  font-weight: 900;
+  background: transparent;
+  border: 0;
+  padding: 0;
+}
+
+/* ******* compassion section css ****************** */
+
+.compassion {
+  padding: 90px 0px;
+  text-align: center;
+}
+.compassion h2 {
+  font-size: clamp(2.6rem, 4vw, 4.4rem);
+  margin-bottom: 20px;
+}
+.compassion p {
+  color: #bdbbb6;
+  font-size: 1.44rem;
+  line-height: 1.72;
+  font-weight: 400;
+}
+.compassion-inner {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 60px;
+}
+.compassion-inner .compassion-box {
+  padding: 24px 26px;
+  border: 1px solid var(--line);
+}
+.compassion-inner .compassion-box .num {
+  text-align: left;
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+  color: var(--gold);
+  font-size: 22px;
+  margin-bottom: 14px;
+  display: block;
+}
+.compassion-inner .compassion-box h4 {
+  text-align: left;
+  font-weight: 700;
+  font-size: 19px;
+  margin-bottom: 10px;
+  font-family: Georgia, "Times New Roman", serif;
+}
+.compassion-inner .compassion-box p {
+  margin: 0;
+  color: #bdbbb6;
+  font-weight: 400;
+  font-size: 1.05rem;
+  line-height: 1.72;
+  text-align: left;
+}
+
+
+.contact-sec .contact-inr .contact-img img {
+	width: 100%;
+}
+.contact-sec .contact-inr .contact-img {
+	width: 43%;
+}
+.contact-sec .contact-inr .contact-text {
+	width: 55%;
+	max-width: 900px;
+}
+.contact-sec .contact-inr {
+	display: flex;
+	gap: 70px;
+	align-items: center;
+}
+.contact-sec .contact-inr .contact-text h2 {
+	font-size: clamp(2.6rem, 4vw, 4.4rem);
+	line-height: 1.02;
+	margin-bottom: 30px;
+}
+.contact-sec .contact-inr .contact-text h3 {
+	font-size: clamp(1.35rem, 1.72vw, 1.9rem);
+	margin: 0px;
+	width: 100%;
+	max-width: 700px;
+	margin-bottom: 30px;
+}
+
+
+
+
+@media (max-width: 1140px) {
+  .about-prepared .about-prepared-box {
+    padding: 20px 25px;
+  }
+  .newsletter-grid {
+    grid-template-columns: 1fr;
+  }
+  .about-grid {
+    grid-template-columns: 53% 41%;
+  }
+  .expertise-panel .ip-list {
+    columns: 1;
+  }
+  .credentials-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 991px) {
+  .about-banner {
+    padding: 70px 0;
+  }
+  .about-tiffany {
+    padding: 60px 0px;
+  }
+  .about-tiffany .about-tiffany-grid {
+    display: flex;
+    gap: 40px;
+    flex-direction: column-reverse;
+  }
+  .about-tiffany .about-tiffany-story h2 {
+    margin-bottom: 22px;
+  }
+  .about-prepared {
+    padding: 30px 0px;
+  }
+  .about-prepared .about-prepared-inner {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .about-prepared .about-prepared-box {
+    padding: 20px;
+  }
+  .about {
+    padding: 60px 0px;
+  }
+  .about-grid {
+    grid-template-columns: 100%;
+    gap: 40px;
+  }
+  .expertise-panel {
+    margin-top: 0;
+  }
+  .expertise-panel .ip-list {
+    columns: 1;
+  }
+  .credentials-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .founder {
+    padding: 30px 0px;
+  }
+  .compassion {
+    padding: 60px 0px;
+  }
+  .compassion p {
+    font-size: 14px;
+  }
+  .compassion p br {
+    display: none;
+  }
+  .compassion-inner {
+    grid-template-columns: repeat(1, 1fr);
+    margin-top: 40px;
+  }
+  .newsletter-form {
+    grid-template-columns: 1fr;
+  }
+  .newsletter-grid {
+    grid-template-columns: 1fr;
+  }
+  .help-prepared .about-prepared-inner {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .help-section .about-tiffany-grid {
+    flex-direction: column;
+  }
+}

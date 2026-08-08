@@ -27,47 +27,21 @@
         </button>
 </div>
 </nav>
-    <section class="contact-sec">
-      <div class="contact-inr">
-        <div class="contact-img">
-          <img src="TG-ColorFav.jpg">
+    <section class="coming-soon">
+      <div class="wrap">
+       <div class="eyebrow">The Intelligence Behind Better Decisions.</div>
+        <h2>Coming <span class="gold">Soon</span>
+        </h2>
+        <p>On-demand masterclasses for families who need Tiffany's frameworks, clarity, and next-step intelligence in a flexible format.</p>
+        <div class="tags">
+          <span>Know what to do</span>
+          <span>Know what not to do</span>
+          <span>Know how to approach what comes next</span>
         </div>
-        <div class="contact-text">
-          <h2>LET’S <span class="gold">TALK!</span>
-          </h2>
-          <h3>Book your 30 Minute Complimentary Discovery Session</h3>
-          <a class="btn btn-primary trigger" id="openModalBtn">Click to Book a Session</a>
-          <div class="modal-overlay" id="modalOverlay" aria-hidden="true">
-            <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-              <button class="modal-close" id="closeModalBtn" type="button" aria-label="Close popup">
-                <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M1 1L13 13M13 1L1 13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
-                </svg>
-              </button>
-              <script src="https://tiffany-golden.mykajabi.com/forms/2149687304/embed.js"></script>
-            </div>
-          </div>
-          <div class="contact-details">
-            <div class="contact-details-box">
-              <div class="details-title">Phone Number ⎯</div>
-              <div class="details-text">
-                <a href="tel:7603104246" >760 - 310 - 4246</a>
-              </div>
-            </div>
-            <div class="contact-details-box">
-              <div class="details-title">Website ⎯</div>
-              <div class="details-text">goldenstrategy.biz</div>
-            </div>
-            <div class="contact-details-box">
-              <div class="details-title">Email ⎯</div>
-              <div class="details-text">
-                <a href="mailto:tiffany@goldenstrategy.biz?" >tiffany@goldenstrategy.biz </a>
-              </div>
-            </div>
-          </div>
-          <div class="contact-last">I would love to hear from you. <span class="gold">Let’s get started!</span>
-          </div>
+        <div class="wl-form">
+          <script src=https://tiffany-golden.mykajabi.com/forms/2149688183/embed.js></script>
         </div>
+        <div class="wl-note">No spam — just a note the moment masterclasses go live.</div>
       </div>
     </section>
     <footer>
@@ -104,39 +78,6 @@
       toggler.addEventListener("click", () => {
         wraper.classList.toggle("mobile-nav-active");
       });
-    </script>
-    <script>
-      (function() {
-        const openBtn = document.getElementById('openModalBtn');
-        const closeBtn = document.getElementById('closeModalBtn');
-        const overlay = document.getElementById('modalOverlay');
-
-        function openModal() {
-          overlay.classList.add('is-open');
-          overlay.setAttribute('aria-hidden', 'false');
-          document.body.style.overflow = 'hidden';
-          closeBtn.focus();
-        }
-
-        function closeModal() {
-          overlay.classList.remove('is-open');
-          overlay.setAttribute('aria-hidden', 'true');
-          document.body.style.overflow = '';
-          openBtn.focus();
-        }
-        openBtn.addEventListener('click', openModal);
-        closeBtn.addEventListener('click', closeModal);
-        // Close when clicking the dimmed backdrop (outside the modal card)
-        overlay.addEventListener('click', function(e) {
-          if (e.target === overlay) closeModal();
-        });
-        // Close on Escape key
-        document.addEventListener('keydown', function(e) {
-          if (e.key === 'Escape' && overlay.classList.contains('is-open')) {
-            closeModal();
-          }
-        });
-      })();
     </script>
   </body>
 </html>

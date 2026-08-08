@@ -40,7 +40,7 @@
 
 .about-banner {
   padding: 120px 0;
-  background-image: url(source-assets/about-banner.jpg);
+  background-image: url(about-banner.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top;
@@ -216,7 +216,7 @@
   border-bottom: 1px solid var(--line);
 }
 .about-grid {
-  grid-template-columns: 58% 42%;
+  grid-template-columns: 53% 42%;
   gap: 70px;
   align-items: start;
   display: grid;
@@ -460,8 +460,8 @@
   position: relative;
   width: 100%;
   max-width: 600px;
-  background: #fff;
-  padding: 3rem 2.5rem 2.75rem;
+  background: #0e0e0e;
+  padding: 20px;
   transform: translateY(24px) scale(0.97);
   opacity: 0;
   transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
@@ -514,50 +514,51 @@
   margin: 0px !important;
   max-width: 100% !important;
   padding: 0px !important;
+  background: #0e0e0e !important;
 }
 .kajabi-form__content {
   margin: 0px !important;
   max-width: 100% !important;
   padding: 0px !important;
+  background: #0e0e0e !important;
 }
 .kajabi-form__title {
   font-size: clamp(1.35rem, 1.72vw, 1.9rem) !important;
   font-family: Georgia, "Times New Roman", serif !important;
-  color: var(--black) !important;
+  color: var(--white) !important;
   font-weight: bold !important;
 }
 .kajabi-form__subtitle {
-  color: black !important;
+  color: #fff !important;
   font-size: 18px !important;
 }
 .kajabi-form__content input {
   min-height: 58px;
-  padding: 0 18px;
-  background: #e7e7e7 !important;
-  border: 1px solid #c3c3c3 !important;
-  border-radius: 10px !important;
-  color: black !important;
+  border-radius: 0px !important;
+  color: #fff !important;
   opacity: 1 !important;
+  background: #151515 !important;
+  border: 1px solid rgba(203, 170, 77, 0.28) !important;
 }
 .kajabi-form__content input::placeholder {
-  opacity: 0.8;
-  color: black !important;
+  opacity: 0.5;
+  color: #fff !important;
 }
 .kajabi-form__content select {
   min-height: 58px;
-  padding: 0 18px;
-  background: #e7e7e7 !important;
-  border: 1px solid #c3c3c3 !important;
-  border-radius: 10px !important;
-  color: black !important;
+  border-radius: 0px !important;
+  color: #fff !important;
   opacity: 1 !important;
+  background: #151515 !important;
+  border: 1px solid rgba(203, 170, 77, 0.28) !important;
 }
 .kajabi-form__content textarea {
   padding: 0 18px;
-  background: #e7e7e7 !important;
-  border: 1px solid #c3c3c3 !important;
-  border-radius: 10px !important;
-  color: black !important;
+  color: #fff !important;
+  opacity: 1 !important;
+  background: #151515 !important;
+  border: 1px solid rgba(203, 170, 77, 0.28) !important;
+  border-radius: 0px !important;
 }
 .kajabi-form__btn {
   background: var(--gold) !important;
@@ -576,17 +577,228 @@
   background: var(--gold2) !important;
 }
 .checkbox-field.kajabi-form__form-item .text {
-  color: black;
+  color: #fff;
 }
 
-@media (max-width: 480px) {
-  .modal {
-    padding: 2.5rem 1.75rem 2.25rem;
+/* ************** coming soon page css ************ */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid var(--gold);
+  padding: 9px 18px;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 0px auto 30px auto;
+}
+.badge .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--gold);
+  animation: pulse 1.8s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
   }
-  .modal-title {
-    font-size: 1.6rem;
+  50% {
+    opacity: 0.25;
   }
 }
+.coming-soon {
+  padding: 90px 0px;
+  text-align: center;
+  border-bottom: 1px solid var(--line);
+}
+.coming-soon h2 {
+  font-size: clamp(2.6rem, 4vw, 4.4rem);
+  line-height: 1.02;
+  width: 100%;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
+}
+.coming-soon p {
+  font-size: 18px;
+  line-height: 1.72;
+  color: #bdbbb6 !important;
+  font-weight: 400 !important;
+  width: 100%;
+  max-width: 600px;
+  margin: 0px auto;
+}
+.tags {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+  margin-top: 40px;
+}
+.tags span {
+  border: 1px solid rgba(255, 255, 255, 0.29);
+  padding: 11px 18px;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--white);
+}
+.wl-form {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  max-width: 600px;
+  margin: 0 auto;justify-content: center;
+}
+.wl-form input {
+  flex: 1;
+  min-width: 160px;
+  background: #151515;
+  border:1px solid rgba(203,170,77,.28);
+  color: var(--white);
+  padding: 15px 16px;
+  font-size: 14px;
+}
+.wl-form input::placeholder {
+  color: #84806f;
+}
+.wl-form input:focus {
+  outline: 1px solid var(--gold);
+  border-color: var(--gold);
+}
+.wl-note {
+  margin-top: 16px;
+  font-size: 12px;
+  color: #84806f;
+  letter-spacing: 0.02em;
+}
+.wl-form #kajabi-form {
+	padding: 0px !important;
+}
+.wl-form #kajabi-form .kajabi-form__title, .wl-form #kajabi-form .kajabi-form__subtitle {
+	display: none !important;
+}
+.wl-form #kajabi-form fieldset {
+	display: flex;
+	gap: 12px;
+	flex-wrap: wrap;
+}
+.wl-form #kajabi-form fieldset .kajabi-form__btn {
+	margin: 0px;
+}
+.wl-form #kajabi-form fieldset .kajabi-form__form-item {
+	margin: 0;
+}
+
+
+/* ************* book bonus page css ************* */
+
+
+.bookbonus-banner {
+  padding: 90px 0px;
+  background: linear-gradient(180deg,#0c0c0c 0%,#070707 100%);
+}
+
+.bookbonus-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+  background: radial-gradient(ellipse at 50% 0%, rgba(203,170,77,.20) 0%, transparent 60%);
+
+}
+.bookbonus-banner h2 {
+  font-size: clamp(2.6rem, 4vw, 4.4rem);
+  line-height: 1.02;
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
+  text-align: center;
+}
+.bookbonus-banner p {
+  font-size: 18px;
+  line-height: 1.72;
+  color: #bdbbb6 !important;
+  font-weight: 400 !important;
+  width: 100%;
+  max-width: 600px;
+  margin: 0px auto;
+  text-align: center;
+}
+.bookbonus-form {
+	padding: 90px 0px;
+	border-top: 1px solid var(--line);
+}
+.bookbonus-form h2 {
+	font-size: clamp(2.6rem, 4vw, 4.4rem);
+	line-height: 1.02;
+	width: 100%;
+	max-width: 1200px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 30px;
+	text-align: center;
+}
+.bookbonus-form p {
+	font-size: 18px;
+	line-height: 1.72;
+	color: #bdbbb6 !important;
+	font-weight: 400 !important;
+	width: 100%;
+	max-width: 800px;
+	margin: 0px auto;
+	text-align: center;
+}
+.bookbonus-form .bookbonusform {
+	width: 100%;
+	max-width: 650px;
+	margin: 60px auto 0px auto;
+	border: 1px solid rgba(203,170,77,.28);
+	padding: 35px;
+}
+.bookbonus-form .bookbonusform .kajabi-form__title {
+	display: none;
+}
+.bookbonus-form .bookbonusform .kajabi-form__subtitle {
+	display: none;
+}
+.bookbonus-form .bookbonusform .kajabi-form__btn {
+	width: 100%;
+}
+.book-prepared .about-prepared-inner {
+	grid-template-columns: repeat(3, 1fr);
+	width: 100%;
+	max-width: 1200px;
+	margin: 0px auto;
+}
+.book-prepared .about-prepared-inner .about-prepared-box {
+	border: 1px solid rgba(255, 255, 255, 0.17);
+	padding: 26px 22px;
+}
+.book-prepared .eyebrow {
+	text-align: center;
+}
+.book-prepared h2 {
+	font-size: clamp(2.6rem, 4vw, 4.4rem);
+	line-height: 1.02;
+	text-align: center;
+	max-width: 650px;
+	margin: 0px auto 60px auto;
+}
+.book-prepared {
+	padding: 90px 0px;
+}
+
+
 
 @media (max-width: 1140px) {
   .about-prepared .about-prepared-box {
@@ -625,7 +837,7 @@
     padding: 30px 0px;
   }
   .about-prepared .about-prepared-inner {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
   }
   .about-prepared .about-prepared-box {
     padding: 20px;
@@ -683,5 +895,21 @@
   }
   .contact-sec .contact-inr .contact-text {
     width: 100%;
+  }
+  .coming-soon {
+    padding: 50px 0px;
+  }
+}
+@media (max-width: 640px) {
+  .wl-form {
+    flex-direction: column;
+  }
+}
+@media (max-width: 480px) {
+  .modal {
+    padding: 2.5rem 1.75rem 2.25rem;
+  }
+  .modal-title {
+    font-size: 1.6rem;
   }
 }

@@ -41,7 +41,7 @@ nav{position:sticky;top:0;z-index:50;background:rgba(7,7,7,.96);border-bottom:1p
 .risk-callout h2{display:flex;align-items:center;gap:14px;font-size:clamp(1.28rem,1.55vw,1.68rem);margin-bottom:14px;white-space:nowrap}
 .risk-accent{display:inline-block;width:72px;height:2px;background:var(--gold);flex:0 0 auto}
 .risk-callout p{font-size:1.28rem}
-.transform-block{margin-bottom:28px}.transform-cta{font-size:.95rem;margin-bottom:12px}.transform{font-size:1.02rem;line-height:1.42}
+.transform-block{margin-bottom:28px}.transform-cta{font-size:23px;margin-bottom:12px}.transform{font-size:1.02rem;line-height:1.42}
 .path-label{font-size:.86rem;margin:0 0 9px}.path-buttons .btn{min-height:50px}
 .hero{min-height:calc(100vh - 78px)}
 .portrait{min-height:730px}.stat-rail{padding:25px 10px 24px}.stat{min-height:116px;padding:13px}.stat strong{font-size:2rem}
@@ -56,8 +56,43 @@ nav{position:sticky;top:0;z-index:50;background:rgba(7,7,7,.96);border-bottom:1p
 
 
 /* v60 controlled refinements */
-#contact #kajabi-form {width: 100%;max-width: 800px;margin: 80px auto 0px auto;}
+#contact #kajabi-form {width: 100%;max-width: 100%;margin: 24px auto 0 auto;}
 #contact #kajabi-form .kajabi-form__title, #contact #kajabi-form .kajabi-form__subtitle {display: none;}
+
+/* Transform With Tiffany — contact CTA redesign */
+.cta-transform-frame{margin-top:70px;padding:34px;border-radius:26px;background:url("contact-bg-art.png") center/cover no-repeat;}
+.cta-transform-panel{background:#0b0b0a;border-radius:16px;padding:70px 60px;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+.cta-transform-left .eyebrow{margin-bottom:18px}
+.cta-transform-heading{font-family:Georgia,"Times New Roman",serif;font-weight:800;font-size:clamp(3.2rem,5.6vw,5rem);line-height:1.04;margin:0 0 30px;color:#fff}
+.cta-transform-heading .gold{color:var(--gold)}
+.cta-transform-sub{font-family:Georgia,"Times New Roman",serif;font-size:1.75rem;line-height:1.35;color:#fff;margin:0 0 34px}
+.cta-transform-sub em{color:var(--gold);font-style:italic}
+.cta-transform-callout{margin:0 0 34px}
+.cta-transform-callout-title{font-family:Georgia,"Times New Roman",serif;font-weight:700;font-size:2rem;line-height:1.28;color:var(--gold);margin:0 0 10px}
+.cta-transform-callout p{font-family:Georgia,"Times New Roman",serif;font-weight:700;font-size:1.75rem;line-height:1.35;color:#fff;margin:0}
+.cta-transform-callout p .gold{color:var(--gold)}
+.cta-transform-mission{font-family:Georgia,"Times New Roman",serif;font-size:1.5rem;line-height:1.5;color:#fff;margin:0}
+.cta-transform-mission em{color:var(--gold);font-style:italic}
+.cta-transform-card{border:1px solid var(--gold);border-radius:20px;padding:44px 50px 38px;text-align:center}
+.cta-transform-ornament{display:flex;align-items:center;justify-content:center;gap:18px;margin:0 auto 14px}
+.cta-transform-ornament::before,.cta-transform-ornament::after{content:"";width:100px;height:1px;background:var(--gold)}
+.cta-transform-ornament span{width:16px;height:16px;background:var(--gold);transform:rotate(45deg)}
+.cta-transform-card-title{font-family:Georgia,"Times New Roman",serif;font-weight:700;font-size:clamp(2.8rem,4.2vw,3.8rem);color:var(--gold);margin:0 0 14px}
+.cta-transform-card-intro{font-size:1.3rem;line-height:1.42;color:#fff;margin:0}
+@media(max-width:960px){
+.cta-transform-panel{grid-template-columns:1fr;padding:44px 30px;gap:40px}
+.cta-transform-card{padding:36px 30px}
+.cta-transform-heading{font-size:2.8rem}
+}
+@media(max-width:600px){
+.cta-transform-frame{padding:14px;border-radius:18px}
+.cta-transform-panel{padding:34px 20px;border-radius:12px}
+.cta-transform-heading{font-size:2.2rem}
+.cta-transform-sub,.cta-transform-callout-title,.cta-transform-callout p{font-size:1.3rem}
+.cta-transform-mission{font-size:1.15rem}
+.cta-transform-card-title{font-size:2.2rem}
+.cta-transform-card-intro{font-size:1.1rem}
+}
 .portrait img{object-position:center 2%;image-rendering:auto}
 .portrait-card{left:8%;right:8%;bottom:1.5%;padding:15px 18px;background:linear-gradient(180deg,rgba(5,5,5,.76),rgba(5,5,5,.9));border-top:1px solid rgba(203,170,77,.72);border-bottom:1px solid rgba(203,170,77,.72)}
 .portrait-card h3{font-size:1.25rem;max-width:420px}.portrait-card p{font-size:1rem;margin-bottom:12px}.portrait-card .btn{width:100%;min-height:48px}
@@ -176,7 +211,7 @@ nav{position:sticky;top:0;z-index:50;background:rgba(7,7,7,.96);border-bottom:1p
 .hero h1 .main-line{white-space:normal}
 .hero h1 .unseen-line{font-size:1em;margin-top:0;color:var(--gold)}
 .hero h1 .unseen-line em{font-style:italic;color:var(--gold)}
-.transform-intro{max-width:1040px;font-size:1.13rem;line-height:1.5}
+.transform-intro{max-width:1040px;font-size:20px;line-height:1.5}
 .portrait img{object-position:center 7%;image-rendering:auto}
 .portrait-card{left:9%;right:9%;bottom:2.8%;padding:16px 20px;background:rgba(5,5,5,.78)}
 .stat{align-items:center!important;text-align:center!important}.stat strong,.stat span,.stat small{width:100%;text-align:center!important}
@@ -687,8 +722,28 @@ nav{position:sticky;top:0;z-index:50;background:rgba(7,7,7,.96);border-bottom:1p
 </div><div class="expertise-panel"><div class="eyebrow ip-title">Proprietary Intelligences</div><ul class="ip-list"><li>Actionable Awareness Intelligence™</li><li>Golden Lens Approach©</li><li>Senior Solitaire™</li><li>Student Solitaire™</li><li>LAND™ Framework</li><li class="combined-ip">The Five Box Method™ Care Intelligence System™</li><li>Student Elevation Architecture™</li></ul><div class="eyebrow credentials-title">Certifications</div><div class="credentials-grid"><div class="credential">Certified Senior Advisor® (CSA)</div><div class="credential">Certified Business<br>Coach</div><div class="credential">Certified Life<br>Coach</div><div class="credential">Certified Nutrition<br>Coach</div><div class="credential">Certified Holobody<br>Coach</div><div class="credential">Bioengineering<br>Cert</div></div></div></div></section>
 <section class="masterclass-teaser"><div class="wrap teaser-grid"><div><div class="eyebrow">Coming Fall 2026</div><h2>The intelligence behind better decisions</h2><div class="teaser-lines"><span>Know what to do</span><span>Know what not to do</span><span>Know how to approach what comes next</span></div></div><div class="teaser-action"><p>On-demand masterclasses for families who need Tiffany’s frameworks, clarity, and next-step intelligence in a flexible format.</p><a class="btn btn-primary" href="masterclasses.html">Explore Tiffany’s Masterclasses</a></div></div></section><section class="contact" id="contact"><div class="wrap"><div class="header"><div class="eyebrow">Start Here</div><h2 class="section-title">Book an Intelligence Briefing</h2><p class="lead">Choose the pathway that best matches the people you are responsible for protecting</p></div><div class="contact-options"><div class="contact-card"><h3>Healthcare + Care Communities</h3><p>Keynotes bulk book implementation staff training onboarding intelligence and executive advisory</p></div><div class="contact-card"><h3>Universities + Colleges</h3><p>Campus diagnostics Student Elevation Architecture™ LAND™ training and leadership keynotes</p></div><a class="contact-card contact-card-link" href="private-care-intelligence.html"><h3>Private Care Intelligence</h3><p>Confidential curated strategy for families navigating high-stakes aging parent decisions, cognitive concerns, and complex transitions</p><span>Explore Private Care Intelligence →</span></a></div>
 
+<div class="cta-transform-frame"><div class="cta-transform-panel">
+<div class="cta-transform-left">
+<div class="eyebrow">Transform With Tiffany</div>
+<h2 class="cta-transform-heading">End Silent Suffering.<br><span class="gold">Lead the Transformation</span></h2>
+<p class="cta-transform-sub">Your people. Your P&amp;L. Your reputation.<br>It starts with <em>what you can’t see.</em></p>
+<div class="cta-transform-callout">
+<div class="cta-transform-callout-title">Hidden Doesn’t Mean Harmless.</div>
+<p>What your systems <span class="gold">miss</span> becomes your <span class="gold">risk</span>.</p>
+</div>
+<p class="cta-transform-mission">I’m on a mission to end silent suffering<br>in Care Communities and on University Campuses<br><em>— and I invite you to be part of it.</em></p>
+</div>
+<div class="cta-transform-right">
+<div class="cta-transform-card">
+<div class="cta-transform-ornament" aria-hidden="true"><span></span></div>
+<h3 class="cta-transform-card-title">Let’s Transform.</h3>
+<p class="cta-transform-card-intro">Introduce yourself &amp; how I can help you end silent suffering for your people.</p>
+<div id="kajabi-form">
 <script src="https://tiffany-golden.mykajabi.com/forms/2149687304/embed.js"></script>
-
+</div>
+</div>
+</div>
+</div></div>
 
 </div></section>
 <section class="newsletter" id="newsletter"><div class="wrap newsletter-grid"><div><div class="newsletter-brand"><img alt="Golden Strategy" class="golden-strategy-logo newsletter-logo" src="https://images.squarespace-cdn.com/content/v1/67017efaf00a0b7647706177/1728151317605-AA6DP19JDAZ0BQ6E9QAD/Golden.png?format=1500w"></div><div class="eyebrow" style="color:#080808">The Intelligence Brief</div><h2>For Leaders Who Refuse to Choose the Process Over Their People</h2><p>Receive sharp, practical observations on senior care, campus belonging, hidden risk, onboarding, and the human intelligence traditional systems overlook.</p></div><form class="newsletter-form"><input aria-label="First name" placeholder="First name"><input aria-label="Email address" placeholder="Email address" type="email"><button class="btn" type="button">Join the Brief</button></form></div></section>

@@ -54,12 +54,9 @@ h4 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 54px;
-  padding: 0 26px;
   text-decoration: none;
   text-transform: uppercase;
-  font-size: 14px;
-  font-weight: 900;
+  font-weight: 600;
   letter-spacing: 0.13em;
   border: 1px solid var(--gold);
   transition: 0.2s;
@@ -67,15 +64,29 @@ h4 {
 .btn-primary {
   background: var(--gold);
   color: #080808;
+  font-size: 19px;
+  line-height: 1.2;
+  min-height: 52px;
+  height: auto;
+  padding: 14px 26px;
 }
 .btn-primary:hover {
   background: var(--gold2);
 }
 .btn-outline {
   color: var(--gold);
+  font-size: 18px;
+  line-height: 1.2;
+  min-height: 48px;
+  height: auto;
+  padding: 13px 22px;
 }
 .btn-outline:hover {
   background: rgba(203, 170, 77, 0.09);
+}
+@media (max-width: 768px) {
+  .btn-primary { font-size: 18px; }
+  .btn-outline { font-size: 17px; }
 }
 
 
@@ -112,8 +123,11 @@ nav {
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 0;
-  font-size: 12px;
+  font-size: 17px;
   font-weight: 800;
+}
+@media (max-width: 768px) {
+  .nav-links a { font-size: 16px; }
 }
 .nav-links a:hover {
   color: var(--gold);
@@ -265,7 +279,7 @@ body:has(.mobile-nav-active) .toggler-x-icon {
 /* BODY */
 body, p, li, input, textarea, select {
 font-family: Arial, Helvetica, "Source Sans 3", sans-serif;
-font-size: 19px;
+font-size: 20px;
 line-height: 1.62;
 font-weight: 400;
 }
@@ -281,13 +295,13 @@ font-family: Georgia, "Times New Roman", serif;
 }
 h2, .section-title {
 font-weight: 600;
-font-size: clamp(31px, 3vw, 44px);
+font-size: clamp(38px, 3.4vw, 46px);
 line-height: 1.12;
 letter-spacing: -0.025em;
 }
 h3, .section-subtitle, .card-title {
 font-weight: 600;
-font-size: clamp(23px, 2.2vw, 30px);
+font-size: clamp(26px, 2.5vw, 32px);
 line-height: 1.18;
 letter-spacing: -0.018em;
 }
@@ -310,7 +324,7 @@ letter-spacing: 0.045em;
 .hero-subtitle,
 blockquote {
 font-family: Arial, Helvetica, "Source Sans 3", sans-serif;
-font-size: 21px;
+font-size: 22px;
 line-height: 1.55;
 }
 
@@ -322,6 +336,7 @@ nav, nav a, .btn, button, .cta, .transform-cta, .authority, .path-label {
 font-family: "DM Sans", Arial, Helvetica, sans-serif;
 font-weight: 600;
 }
+nav a { font-size: 17px; }
 
 /* SOURCES / FINE PRINT */
 small, .small, .caption, .meta, .source, .footnote {
@@ -339,7 +354,7 @@ line-height: 1.50;
 /* MOBILE */
 @media (max-width: 768px) {
 body, p, li, input, textarea, select {
-font-size: 18px;
+font-size: 19px;
 line-height: 1.60;
 }
 
@@ -349,5 +364,19 @@ line-height: 1.60;
 blockquote {
 font-size: 20px;
 line-height: 1.55;
+}
+
+h2, .section-title {
+font-size: clamp(30px, 7vw, 34px);
+}
+
+h3, .section-subtitle, .card-title {
+font-size: clamp(23px, 6vw, 27px);
+}
+
+nav a { font-size: 16px; }
+
+small, .small, .caption, .meta, .source, .footnote {
+font-size: 15px;
 }
 }

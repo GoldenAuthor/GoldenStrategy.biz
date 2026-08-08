@@ -431,6 +431,15 @@
   font-size: 1.38rem;
   font-family: Georgia, "Times New Roman", serif;
   font-weight: bold;
+  margin-top: 40px;
+}
+.contact-sec .contact-inr .contact-text .contact-last-sub {
+  font-size: 1.1rem;
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: normal;
+  color: var(--gold);
+  opacity: 0.75;
+  margin-top: 8px;
 }
 
 /* ---------- Overlay ---------- */
@@ -625,6 +634,10 @@
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 30px;
+  text-shadow: 0 0 24px rgba(255,255,255,.35);
+}
+.coming-soon h2 .coming-soon-glow {
+  text-shadow: 0 0 30px rgba(203,170,77,.85), 0 0 60px rgba(203,170,77,.4);
 }
 .coming-soon p {
   font-size: 18px;

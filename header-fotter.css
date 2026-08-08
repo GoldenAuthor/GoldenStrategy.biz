@@ -123,11 +123,8 @@ nav {
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 0;
-  font-size: 17px;
+  font-size: 12px;
   font-weight: 800;
-}
-@media (max-width: 768px) {
-  .nav-links a { font-size: 16px; }
 }
 .nav-links a:hover {
   color: var(--gold);
@@ -336,7 +333,6 @@ nav, nav a, .btn, button, .cta, .transform-cta, .authority, .path-label {
 font-family: "DM Sans", Arial, Helvetica, sans-serif;
 font-weight: 600;
 }
-nav a { font-size: 17px; }
 
 /* SOURCES / FINE PRINT */
 small, .small, .caption, .meta, .source, .footnote {
@@ -373,8 +369,6 @@ font-size: clamp(30px, 7vw, 34px);
 h3, .section-subtitle, .card-title {
 font-size: clamp(23px, 6vw, 27px);
 }
-
-nav a { font-size: 16px; }
 
 small, .small, .caption, .meta, .source, .footnote {
 font-size: 15px;

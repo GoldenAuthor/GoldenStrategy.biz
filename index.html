@@ -306,7 +306,9 @@ nav{position:sticky;top:0;z-index:50;background:rgba(7,7,7,.96);border-bottom:1p
   --fbm-ink-soft:#4a4a4a;
   --fbm-line:rgba(0,0,0,.08);
   --fbm-shadow:0 30px 80px rgba(0,0,0,.35);
-   --fbm-radius:6px;
+  --fbm-radius:6px;
+  --fbm-font-head:Georgia,'Times New Roman',serif;
+  --fbm-font-body:Arial,Helvetica,sans-serif;
 }
 
 /* ---------- MODAL SHELL ---------- */
@@ -324,9 +326,6 @@ nav{position:sticky;top:0;z-index:50;background:rgba(7,7,7,.96);border-bottom:1p
 }
 .fbm-modal[hidden]{display:none;}
 
-/* [hidden] must always win over the grid layout rules below */
-.fbm-modal [hidden]{display:none !important;}
-
 .fbm-modal__dialog{
   position:relative;
   width:100%;
@@ -334,10 +333,12 @@ nav{position:sticky;top:0;z-index:50;background:rgba(7,7,7,.96);border-bottom:1p
   max-height:92vh;
   overflow-y:auto;
   background:var(--fbm-white);
-  border:none;                 /* production lock: no outer border */
+  border:none;
   border-radius:var(--fbm-radius);
   box-shadow:var(--fbm-shadow);
   -webkit-overflow-scrolling:touch;
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
 }
 
 .fbm-close {
@@ -368,7 +369,7 @@ nav{position:sticky;top:0;z-index:50;background:rgba(7,7,7,.96);border-bottom:1p
   font-weight:600;
   font-style:italic;
   font-size:16px;
-  color:var(--fbm-ink-soft);
+  color:var(--fbm-blue);
   margin:0 0 2px;
 }
 .fbm-title{
@@ -376,7 +377,7 @@ nav{position:sticky;top:0;z-index:50;background:rgba(7,7,7,.96);border-bottom:1p
   font-weight:900;
   font-size:clamp(30px,4vw,42px);
   line-height:1.05;
-  color:var(--fbm-ink);
+  color:var(--fbm-orange);
   margin:0 0 18px;
 }
 
@@ -399,38 +400,9 @@ nav{position:sticky;top:0;z-index:50;background:rgba(7,7,7,.96);border-bottom:1p
   background:var(--fbm-orange);
 }
 
-/* PREPARE / PROTECT / PRESERVE — Barlow, Power Case (uppercase, tracked) */
-.fbm-benefit h3{
-  font-family:var(--fbm-font-head);
-  font-weight:800;
-  font-size:15px;
-  letter-spacing:.14em;
-  text-transform:uppercase;
-  color:var(--fbm-blue);
-  margin:0 0 8px;
-}
-.fbm-benefit:nth-of-type(2) h3{color:var(--fbm-orange);}
-.fbm-benefit:nth-of-type(3) h3{color:var(--fbm-ink);}
-.fbm-benefit ul{
-  margin:0 0 20px;
-  padding:0 0 0 18px;
-  list-style:disc;
-}
-.fbm-benefit li{
-  font-size:14.5px;
-  line-height:1.5;
-  color:var(--fbm-ink-soft);
-  margin-bottom:6px;
-}
-
-/* ---------- STATE 1: BUY ---------- */
-.fbm-state--buy{
-  display:grid;
-  grid-template-columns:1.15fr .85fr;
-}
-
-.fbm-buy__content{
-  padding:56px 48px 48px;
+/* ---------- LEFT PANEL: BOOK / BUY ---------- */
+.fbm-panel--buy{
+  padding:52px 48px 44px;
   background:var(--fbm-white);
 }
 
@@ -445,7 +417,6 @@ nav{position:sticky;top:0;z-index:50;background:rgba(7,7,7,.96);border-bottom:1p
 .fbm-book3d{
   position:relative;
   width:190px;
-  perspective:900px;
 }
 .fbm-book3d img{
   display:block;
@@ -454,8 +425,42 @@ nav{position:sticky;top:0;z-index:50;background:rgba(7,7,7,.96);border-bottom:1p
   box-shadow:0 18px 40px rgba(0,0,0,.22);
   border-radius:2px;
 }
-.fbm-book3d img.fbm-book3d__spine{
-  display:none; /* shown only in true 3D composite build; safe no-op otherwise */
+
+.fbm-benefit-list{display:flex;flex-direction:column;gap:20px;}
+.fbm-benefit{display:flex;gap:14px;align-items:flex-start;}
+.fbm-benefit__icon{
+  flex:0 0 auto;
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  border:2px solid var(--fbm-orange);
+  color:var(--fbm-orange);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.fbm-benefit__icon svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;}
+
+.fbm-benefit h3{
+  font-family:var(--fbm-font-head);
+  font-weight:800;
+  font-size:15px;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:var(--fbm-blue);
+  margin:2px 0 8px;
+}
+.fbm-benefit:nth-of-type(2) h3{color:var(--fbm-orange);}
+.fbm-benefit ul{
+  margin:0;
+  padding:0 0 0 18px;
+  list-style:disc;
+}
+.fbm-benefit li{
+  font-size:14px;
+  line-height:1.48;
+  color:var(--fbm-ink-soft);
+  margin-bottom:4px;
 }
 
 .fbm-signature{
@@ -478,259 +483,112 @@ nav{position:sticky;top:0;z-index:50;background:rgba(7,7,7,.96);border-bottom:1p
   color:var(--fbm-orange);
 }
 .fbm-buy-button {
-	display: inline-block;
-	background: var(--gold);
-	color: black;
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+	background: var(--fbm-orange);
+	color: var(--fbm-white);
+	font-family: var(--fbm-font-head);
 	font-weight: 800;
 	font-size: 14px;
 	letter-spacing: .1em;
 	text-transform: uppercase;
 	text-decoration: none;
-	padding: 17px 34px;
+	padding: 16px 30px;
 	border-radius: 3px;
 	transition: transform .2s ease, background .2s ease;
 }
+.fbm-buy-button svg{width:20px;height:20px;flex:0 0 auto;}
 .fbm-buy-button:hover{
-  opacity:0.8;
+  background:#e64a26;
   transform:translateY(-2px);
 }
 
 .fbm-availability{
   font-size:12.5px;
   color:var(--fbm-ink-soft);
-  margin:12px 0 22px;
+  margin:12px 0 0;
 }
 
-.fbm-switch {
-	display: block;
-	background: none;
-	border: none;
-	padding: 0;
-	font-size: 13.5px;
-	color: black;
-	text-decoration: underline;
-	cursor: pointer;
-	font-weight: bold;
-}
-
-
-/* ---- right teaser panel (buy state) ---- */
-.fbm-buy__resource{
+/* ---------- RIGHT PANEL: KAJABI RESOURCE FORM ---------- */
+.fbm-panel--resource{
   background:#0e0e0e;
   border-left:1px solid var(--fbm-line);
-  padding:56px 40px;
+  padding:52px 40px;
   display:flex;
   flex-direction:column;
   justify-content:center;
 }
-.fbm-resource-small{
-  font-weight:700;
-  font-size:12.5px;
-  letter-spacing:.1em;
-  text-transform:uppercase;
-  color:var(--gold);
-  margin:0 0 10px;
-}
-.fbm-resource-head{
-line-height: 1.2;
-  margin: 0 0 14px;
-  font-size: clamp(1.35rem, 1.72vw, 1.9rem) !important;
-  font-family: Georgia, "Times New Roman", serif !important;
-  color: var(--white) !important;
-  font-weight: bold !important;
-}
-.fbm-resource-copy{
-  font-size:14px;
-  line-height:1.55;
-  color:#fff;
-  margin:0 0 24px;
-}
-.fbm-resource-cta {
-	display: inline-block;
-	background: var(--gold);
-	color: black;
-	font-family: var(--fbm-font-head);
-	font-weight: 800;
-	font-size: 13px;
-	letter-spacing: .09em;
-	text-transform: uppercase;
-	border: none;
-	padding: 15px 26px;
-	border-radius: 3px;
-	cursor: pointer;
-	transition: background .2s ease, transform .2s ease;
-}
-.fbm-resource-cta:hover{
- opacity:0.8;
-  transform:translateY(-2px);
-}
-
-/* Footer line — replaces removed key icon + duplicate sentence */
-.fbm-intelligence,
-.fbm-bottom-intel{
-  font-size:13px;
-  color:#fff;
-  margin-top:28px;
-}
-.fbm-intelligence strong,
-.fbm-bottom-intel strong{
-  color:#fff;
-  font-weight:800;
-}
-
-/* ---------- STATE 2: RESOURCE FORM ---------- */
-.fbm-state--resource{
-  display:grid;
-  grid-template-columns:.6fr 1fr;
-}
-
-.fbm-resource-book{
-  background:#F7FAFC;
-  border-right:1px solid var(--fbm-line);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:48px 32px;
-}
-.fbm-resource-book .fbm-book3d{width:100%;}
-
-.fbm-resource-form{
-  padding:56px 48px;
-  background: #0e0e0e;
-}
 .fbm-resource-form__welcome {
 	font-weight: 700;
-	font-size: 15px;
-	color: #cbaa4d;
-	margin: 0 0 8px;
+	font-size: 13px;
+	letter-spacing:.14em;
+	color: var(--gold);
+	margin: 0 0 10px;
 	text-transform: uppercase;
 }
-.fbm-resource-form h2 {
+.fbm-resource-head,
+.fbm-panel--resource h2 {
+	line-height: 1.2;
+	margin: 0 0 14px;
 	font-size: clamp(1.35rem, 1.72vw, 1.9rem) !important;
 	font-family: Georgia, "Times New Roman", serif !important;
 	color: var(--white) !important;
 	font-weight: bold !important;
 }
 .fbm-resource-form__intro{
-  font-size:14.5px;
-  color:#fff;
-  line-height:1.55;
-  margin:0 0 28px;
-}
-
-.fbm-form{max-width:460px;}
-.fbm-field{margin-bottom:18px;}
-.fbm-field label{
-  display:block;
-  font-weight:700;
-  font-size:11.5px;
-  letter-spacing:.08em;
-  text-transform:uppercase;
-  color:var(--fbm-ink-soft);
-  margin-bottom:7px;
-}
-.fbm-field input{
-  width:100%;
-  border:1px solid #d8dde1;
-  border-radius:3px;
-  padding:13px 14px;
-  font-family:var(--fbm-font-body);
-  font-size:14.5px;
-  color:var(--fbm-ink);
-  background:var(--fbm-white);
-  transition:border-color .2s ease;
-}
-.fbm-field input:focus{
-  outline:none;
-  border-color:var(--fbm-blue);
-}
-
-.fbm-submit{
-  display:inline-block;
-  width:100%;
-  background:var(--fbm-orange);
-  color:var(--fbm-white);
-  font-family:var(--fbm-font-head);
-  font-weight:800;
   font-size:14px;
-  letter-spacing:.1em;
-  text-transform:uppercase;
-  border:none;
-  padding:16px 24px;
-  border-radius:3px;
-  cursor:pointer;
-  transition:background .2s ease, transform .2s ease;
-}
-.fbm-submit:hover{
-  background:#e64a26;
-  transform:translateY(-2px);
-}
-.fbm-submit:disabled{
-  opacity:.6;
-  cursor:default;
-  transform:none;
+  line-height:1.55;
+  color:#d8d5cd;
+  margin:0 0 24px;
 }
 
 .fbm-resource-note{
-  font-size:11.5px;
+  font-size:12.5px;
   line-height:1.5;
-  color:#8a8f93;
-  margin:16px 0 22px;
-  max-width:460px;
+  color:#a3a099;
+  margin:16px 0 0;
+  display:flex;
+  align-items:flex-start;
+  gap:8px;
 }
 
-.fbm-back{
+/* Footer line */
+.fbm-bottom-intel{
+  font-size:12.5px;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  color:#fff;
+  text-align:center;
+  margin-top:26px;
+  padding-top:20px;
+  border-top:1px solid rgba(203,170,77,.28);
+}
+.fbm-bottom-intel strong{
   display:block;
-  background:none;
-  border:none;
-  padding:0;
-  font-size:13.5px;
-  color:#cbaa4d;
-  text-decoration:underline;
-  cursor:pointer;
-  margin-bottom:8px;
-  font-weight: bold;
+  color:var(--gold);
+  font-weight:800;
+  margin-bottom:2px;
 }
 
-/* Success state (injected after submit) */
-.fbm-success{
-  padding:8px 0 0;
+/* Keep Kajabi's own embedded title hidden (we render our own heading above it) */
+.fbm-panel--resource #kajabi-form .kajabi-form__title,
+.fbm-panel--resource .kajabi-form__title{
+  display:none !important;
 }
-.fbm-state--resource .kajabi-modal {
-	background: #0e0e0e !important;
-}
-.fbm-state--resource #kajabi-form .kajabi-form__title {
-	display: none;
-}
-.fbm-success h2{
-  font-family:var(--fbm-font-head);
-  font-weight:900;
-  font-size:26px;
-  color:var(--fbm-ink);
-  margin:0 0 12px;
-}
-.fbm-success p{
-  font-size:14.5px;
-  color:var(--fbm-ink-soft);
-  line-height:1.55;
+.fbm-panel--resource .kajabi-modal{
+  background:#0e0e0e !important;
 }
 
 /* ---------- RESPONSIVE ---------- */
 @media (max-width: 860px){
-  .fbm-state--buy,
-  .fbm-state--resource{
+  .fbm-modal__dialog{
     grid-template-columns:1fr;
   }
-  .fbm-buy__resource{
+  .fbm-panel--resource{
     border-left:none;
     border-top:1px solid var(--fbm-line);
   }
-  .fbm-resource-book{
-    border-right:none;
-    border-bottom:1px solid var(--fbm-line);
-    padding:32px;
-  }
-  .fbm-resource-book .fbm-book3d{width:140px;}
   .fbm-book-benefits{
     grid-template-columns:120px 1fr;
     gap:20px;
@@ -745,16 +603,15 @@ line-height: 1.2;
     height:100%;
     border-radius:0;
   }
-  .fbm-buy__content,
-  .fbm-buy__resource,
-  .fbm-resource-form{
-    padding:40px 24px 32px;
+  .fbm-panel--buy,
+  .fbm-panel--resource{
+    padding:40px 22px 32px;
   }
   .fbm-book-benefits{
     grid-template-columns:1fr;
   }
   .fbm-book3d{
-    width:110px;
+    width:130px;
     margin:0 auto;
   }
   .fbm-title{font-size:28px;}
@@ -762,11 +619,8 @@ line-height: 1.2;
 
 @media (prefers-reduced-motion: reduce){
   .fbm-close,
-  .fbm-buy-button,
-  .fbm-resource-cta,
-  .fbm-submit{transition:none;}
+  .fbm-buy-button{transition:none;}
 }
-
 </style>
 </head>
 <body>
@@ -849,32 +703,32 @@ line-height: 1.2;
     </script>
 	
 
-<!-- FIVE BOX METHOD MODAL — production build (v2)
+<!-- FIVE BOX METHOD MODAL — production build (v3, combined layout)
      Wire AMAZON_URL to the live Amazon detail-page URL before launch.
-     Wire the form's action to the Vercel serverless endpoint; that
-     function should validate the free-text purchase-source field and
-     cross-reference authorized CSA/event attendee emails server-side.
-     Book artwork below is a PLACEHOLDER (assets/five-box-front-cover.jpg,
-     assets/five-box-spine.png) — swap in the official supplied cover and
-     spine art before launch. Do not redraw/reinterpret that artwork. -->
+     Book artwork: book-cover-new.jpg (client-approved 3D cover render).
+     Reader Resource Guide fields/labels/validation/delivery are managed
+     entirely by the Kajabi embed below — do not hand-build those fields. -->
 <div class="fbm-modal" data-fbm-modal="" hidden="" role="dialog" aria-modal="true" aria-label="The Five Box Method">
   <div class="fbm-modal__dialog">
     <button class="fbm-close" data-close="" aria-label="Close">×</button>
 
-    <!-- STATE 1: PURCHASE -->
-    <section class="fbm-state fbm-state--buy" data-state="buy">
-      <div class="fbm-buy__content">
-        <p class="fbm-kicker">It's Not Just a Move.</p>
-        <h2 class="fbm-title">It's Their Life.</h2>
-        <div class="fbm-brand-rule" aria-hidden="true"><i></i></div>
+    <!-- LEFT: BOOK PITCH / ORDER -->
+    <section class="fbm-panel fbm-panel--buy">
+      <p class="fbm-kicker">It's Not Just a Move.</p>
+      <h2 class="fbm-title">It's Their Life.</h2>
+      <div class="fbm-brand-rule" aria-hidden="true"><i></i></div>
 
-        <div class="fbm-book-benefits">
-          <div class="fbm-book3d" aria-label="The Five Box Method book cover">
-           <img class="fbm-book3d__front" alt="The Five Box Method for Moving Aging Parents by Tiffany Golden, CSA" src="BOOK-COVER-APPROVED.jpeg">
-          </div>
+      <div class="fbm-book-benefits">
+        <div class="fbm-book3d" aria-label="The Five Box Method book cover">
+          <img class="fbm-book3d__front" alt="The Five Box Method for Moving Aging Parents by Tiffany Golden, CSA" src="book-cover-new.jpg">
+        </div>
 
-          <div>
-            <div class="fbm-benefit">
+        <div class="fbm-benefit-list">
+          <div class="fbm-benefit">
+            <span class="fbm-benefit__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M3 7.5 12 3l9 4.5-9 4.5-9-4.5Z"/><path d="M3 7.5v9L12 21l9-4.5v-9"/><path d="M12 12v9"/></svg>
+            </span>
+            <div>
               <h3>Prepare</h3>
               <ul>
                 <li>Decode camouflaged conditions &amp; cognitive decline</li>
@@ -882,7 +736,12 @@ line-height: 1.2;
                 <li>Identify emotional, sensory &amp; stabilizing anchors</li>
               </ul>
             </div>
-            <div class="fbm-benefit">
+          </div>
+          <div class="fbm-benefit">
+            <span class="fbm-benefit__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 3 4.5 5.5v5.6c0 5 3.3 8.7 7.5 9.9 4.2-1.2 7.5-4.9 7.5-9.9V5.5L12 3Z"/><path d="m9 12 2 2 4-4"/></svg>
+            </span>
+            <div>
               <h3>Protect</h3>
               <ul>
                 <li>Prevent needless suffering</li>
@@ -890,7 +749,12 @@ line-height: 1.2;
                 <li>Avoid irreversible mistakes</li>
               </ul>
             </div>
-            <div class="fbm-benefit">
+          </div>
+          <div class="fbm-benefit">
+            <span class="fbm-benefit__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 20.5S3.5 15.6 3.5 9.6C3.5 6.7 5.8 4.5 8.6 4.5c1.6 0 3 .8 3.4 2 .4-1.2 1.8-2 3.4-2 2.8 0 5.1 2.2 5.1 5.1 0 6-8.5 10.9-8.5 10.9Z"/></svg>
+            </span>
+            <div>
               <h3>Preserve</h3>
               <ul>
                 <li>Identity</li>
@@ -900,68 +764,45 @@ line-height: 1.2;
             </div>
           </div>
         </div>
-
-        <div class="fbm-signature">
-          <div class="fbm-signature__blue">Your job is never just to pack a house.</div>
-          <div class="fbm-signature__orange">Your job is to protect the person in it.</div>
-        </div>
-
-        <!-- Replace href with live Amazon detail-page URL -->
-        <a class="fbm-buy-button" href="contact.html" rel="noopener">ORDER YOUR COPY</a>
-        <p class="fbm-availability">Currently available on Amazon</p>
-        <button class="fbm-switch" data-open-resource="">Already have your copy? Get your Complimentary Resource Guide →</button>
       </div>
 
-      <aside class="fbm-buy__resource">
-        <p class="fbm-resource-small">Already have your copy?</p>
-        <h2 class="fbm-resource-head">Activate Your Complimentary Reader Resource Guide</h2>
-        <p class="fbm-resource-copy">Enter your purchase information and we'll send the guide directly to your inbox.</p>
-        <button class="fbm-resource-cta" data-open-resource="">GET MY RESOURCE GUIDE</button>
-        <p class="fbm-intelligence"><strong>Care Intelligence</strong> You Won't Find Anywhere Else.</p>
-      </aside>
+      <div class="fbm-signature">
+        <div class="fbm-signature__blue">Your job is never just to pack a house.</div>
+        <div class="fbm-signature__orange">Your job is to protect the person in it.</div>
+      </div>
+
+      <!-- Replace href with live Amazon detail-page URL -->
+      <a class="fbm-buy-button" href="contact.html" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 15.5c3.2 2.4 8.6 3.5 13 1.2.4-.2.7.2.4.6-1 1.4-4.4 3.4-8.6 3.4-4.5 0-7.5-2.1-9-3.7-.3-.3.1-.7.2-.5Zm14.8-1.9c-.3-.4-2-.2-2.7-.1-.2 0-.3-.2-.1-.4 1.4-1 3.6-.7 3.9-.4.3.4-.1 2.6-1.3 3.6-.2.1-.4 0-.3-.2.3-.7.8-2.1.5-2.5Z" fill="currentColor" stroke="none"/><path d="M8.5 12.2V7.7c0-1.5 1.3-2.7 3-2.7s3 1.2 3 2.7" stroke="currentColor" fill="none" stroke-width="1.4"/><rect x="6" y="10.5" width="9" height="6.5" rx="1" fill="none" stroke="currentColor" stroke-width="1.4"/></svg>
+        Order Your Copy
+      </a>
+      <p class="fbm-availability">Currently available on Amazon</p>
     </section>
 
-    <!-- STATE 2: READER RESOURCE ACTIVATION -->
-    <section class="fbm-state fbm-state--resource" data-state="resource" hidden="">
-      <div class="fbm-resource-book">
-        <div class="fbm-book3d" aria-hidden="true">
-          <img class="fbm-book3d__spine" src="data:image/png;base64,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" alt="">
-<img class="fbm-book3d__front" alt="The Five Box Method for Moving Aging Parents by Tiffany Golden, CSA" src="BOOK-COVER-APPROVED.jpeg">
-        </div>
-      </div>
+    <!-- RIGHT: KAJABI READER RESOURCE GUIDE FORM -->
+    <aside class="fbm-panel fbm-panel--resource">
+      <p class="fbm-resource-form__welcome">Welcome!</p>
+      <h2 class="fbm-resource-head">Activate Your Complimentary Reader Resource Guide</h2>
+      <p class="fbm-resource-form__intro">Complete the form below and we'll verify your purchase before sending your guide.</p>
 
-      <div class="fbm-resource-form">
-        <p class="fbm-resource-form__welcome">Welcome</p>
-        <h2>Activate Your Complimentary Reader Resource Guide</h2>
-        <p class="fbm-resource-form__intro">Complete the form below and we'll send your guide directly to your inbox.</p>
+      <script src=https://tiffany-golden.mykajabi.com/forms/2149688186/embed.js></script>
 
-        <!-- RECOMMENDED: post to a Vercel serverless function that validates source/verification,
-             then creates/tags the contact in Kajabi and triggers the delivery email. -->
-        
-		<script src=https://tiffany-golden.mykajabi.com/forms/2149688186/embed.js></script>
-
-        <p class="fbm-resource-note">By requesting the guide, you're asking us to deliver this purchase-related resource to the email above. Keep ongoing marketing consent separate from guide delivery.</p>
-        <button class="fbm-back" data-back-buy="">← Need a copy? Return to order</button>
-        <p class="fbm-bottom-intel"><strong>Care Intelligence</strong> You Won't Find Anywhere Else.</p>
-      </div>
-    </section>
+      <p class="fbm-resource-note">🔒 We'll deliver your complimentary guide directly to your inbox.</p>
+      <p class="fbm-bottom-intel"><strong>Care Intelligence</strong> You Won't Find Anywhere Else.</p>
+    </aside>
   </div>
 </div>
 
 <script id="fbm-popup-script">
 /* =========================================================================
    THE FIVE BOX METHOD™ — BOOK POPUP
-   Production Lock — behavior layer
-   - FiveBoxPopup.open('buy' | 'resource') / .close()
+   Production Lock — behavior layer (v3, single combined view)
+   - FiveBoxPopup.open() / .close()
    - Auto-opens on first visit (persisted via localStorage)
    - Dispatches window CustomEvents for analytics wiring:
-       fbm:popup_open        {detail:{state}}
+       fbm:popup_open
        fbm:popup_close
-       fbm:state_change      {detail:{state}}
        fbm:order_click
-       fbm:resource_submit   {detail:{source}}
-       fbm:resource_success
-       fbm:resource_error    {detail:{error}}
    ========================================================================= */
 (function (window, document) {
   'use strict';
@@ -970,7 +811,6 @@ line-height: 1.2;
   var AUTO_OPEN_DELAY_MS = 1200;
 
   var modal = null;
-  var dialog = null;
   var lastFocused = null;
 
   function fire(name, detail) {
@@ -980,21 +820,8 @@ line-height: 1.2;
   function getModal() {
     if (!modal) {
       modal = document.querySelector('[data-fbm-modal]');
-      if (modal) dialog = modal.querySelector('.fbm-modal__dialog');
     }
     return modal;
-  }
-
-  function setState(state) {
-    var m = getModal();
-    if (!m) return;
-    var states = m.querySelectorAll('[data-state]');
-    for (var i = 0; i < states.length; i++) {
-      var el = states[i];
-      var match = el.getAttribute('data-state') === state;
-      el.hidden = !match;
-    }
-    fire('fbm:state_change', { state: state });
   }
 
   function trapFocus(e) {
@@ -1021,11 +848,10 @@ line-height: 1.2;
     trapFocus(e);
   }
 
-  function open(state) {
+  function open() {
     var m = getModal();
     if (!m) return;
     lastFocused = document.activeElement;
-    setState(state || 'buy');
     m.hidden = false;
     document.body.style.overflow = 'hidden';
     document.addEventListener('keydown', onKeydown, true);
@@ -1033,7 +859,7 @@ line-height: 1.2;
     var closeBtn = m.querySelector('[data-close]');
     if (closeBtn) closeBtn.focus();
 
-    fire('fbm:popup_open', { state: state || 'buy' });
+    fire('fbm:popup_open');
   }
 
   function close() {
@@ -1061,87 +887,12 @@ line-height: 1.2;
       closeButtons[i].addEventListener('click', close);
     }
 
-    var toResource = m.querySelectorAll('[data-open-resource]');
-    for (var j = 0; j < toResource.length; j++) {
-      toResource[j].addEventListener('click', function () {
-        setState('resource');
-      });
-    }
-
-    var toBuy = m.querySelectorAll('[data-back-buy]');
-    for (var k = 0; k < toBuy.length; k++) {
-      toBuy[k].addEventListener('click', function () {
-        setState('buy');
-      });
-    }
-
     var orderLink = m.querySelector('.fbm-buy-button');
     if (orderLink) {
       orderLink.addEventListener('click', function () {
         fire('fbm:order_click');
       });
     }
-
-    var form = m.querySelector('#five-box-resource-form');
-    if (form) wireForm(form);
-  }
-
-  function wireForm(form) {
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-
-      var submitBtn = form.querySelector('.fbm-submit');
-      var originalLabel = submitBtn ? submitBtn.textContent : '';
-      if (submitBtn) {
-        submitBtn.disabled = true;
-        submitBtn.textContent = 'SENDING…';
-      }
-
-      var data = new FormData(form);
-      var sourceValue = (data.get('purchase_source') || '').toString();
-
-      fire('fbm:resource_submit', { source: sourceValue });
-
-      // Recommended: POST to a Vercel serverless function which validates
-      // source/verification server-side, then tags the contact in Kajabi
-      // and triggers the delivery email. See DEVELOPER-HANDOFF.md.
-      fetch(form.action, {
-        method: form.method || 'POST',
-        body: data,
-        headers: { Accept: 'application/json' }
-      })
-        .then(function (res) {
-          if (!res.ok) throw new Error('Request failed: ' + res.status);
-          return res.json().catch(function () { return {}; });
-        })
-        .then(function () {
-          showSuccess(form);
-          fire('fbm:resource_success');
-        })
-        .catch(function (err) {
-          // Endpoint not wired yet in this handoff build — fail gracefully.
-          console.warn('[FiveBoxPopup] resource form submit failed:', err);
-          showSuccess(form); // optimistic UX until /api endpoint is live
-          fire('fbm:resource_error', { error: String(err) });
-        })
-        .finally(function () {
-          if (submitBtn) {
-            submitBtn.disabled = false;
-            submitBtn.textContent = originalLabel;
-          }
-        });
-    });
-  }
-
-  function showSuccess(form) {
-    var container = form.parentNode;
-    var success = document.createElement('div');
-    success.className = 'fbm-success';
-    success.innerHTML =
-      '<h2>Your guide is on its way.</h2>' +
-      '<p>Check your inbox in the next few minutes for your Complimentary Reader Resource Guide. ' +
-      "If you don't see it, check spam or promotions.</p>";
-    form.replaceWith(success);
   }
 
   function maybeAutoOpen() {
@@ -1153,7 +904,7 @@ line-height: 1.2;
     }
 
     window.setTimeout(function () {
-      open('buy');
+      open();
       try {
         window.localStorage.setItem(STORAGE_KEY, String(Date.now()));
       } catch (err) {
@@ -1176,8 +927,7 @@ line-height: 1.2;
 
   window.FiveBoxPopup = {
     open: open,
-    close: close,
-    setState: setState
+    close: close
   };
 })(window, document);
 

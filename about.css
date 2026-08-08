@@ -572,6 +572,7 @@
   letter-spacing: 0.13em !important;
   border: 1px solid var(--gold) !important;
   transition: 0.2s !important;
+  width: 100%;
 }
 .kajabi-form__btn:hover {
   background: var(--gold2) !important;

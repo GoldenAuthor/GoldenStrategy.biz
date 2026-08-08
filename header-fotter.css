@@ -258,3 +258,112 @@ body:has(.mobile-nav-active) .toggler-x-icon {
     border-top: 1px solid #cbaa4d42;
   }
 }
+
+/* UPDATED GOLDEN STRATEGY TYPOGRAPHY */
+
+/* BODY */
+body, p, li {
+font-family: "Source Sans 3", sans-serif;
+font-weight: 400;
+font-size: 19px;
+line-height: 1.62;
+}
+
+/* DO NOT CHANGE HERO H1 FONT */
+
+/* H2 */
+h2 {
+font-family: "DM Sans", sans-serif;
+font-weight: 600;
+font-size: clamp(31px, 3vw, 44px);
+line-height: 1.12;
+letter-spacing: -0.025em;
+}
+
+/* H3 */
+h3 {
+font-family: "DM Sans", sans-serif;
+font-weight: 600;
+font-size: clamp(23px, 2.2vw, 30px);
+line-height: 1.18;
+letter-spacing: -0.018em;
+}
+
+/* EYEBROWS / LABELS */
+.eyebrow,
+.kicker,
+.overline,
+.section-label {
+font-family: "DM Sans", sans-serif;
+font-weight: 700;
+font-size: 18px;
+line-height: 1.30;
+letter-spacing: 0.045em;
+}
+
+/* LEAD / INTRO COPY */
+.lead,
+.intro,
+.hero-subtitle,
+blockquote {
+font-family: "Source Sans 3", sans-serif;
+font-weight: 400;
+font-size: 21px;
+line-height: 1.55;
+}
+
+/* BODY EMPHASIS */
+p strong,
+p b,
+li strong,
+li b {
+font-family: "Source Sans 3", sans-serif;
+font-weight: 600;
+}
+
+/* NAVIGATION + BUTTONS */
+nav,
+nav a,
+button,
+.btn,
+.button,
+.cta {
+font-family: "DM Sans", sans-serif;
+font-weight: 600;
+}
+
+/* SOURCES / FINE PRINT */
+small,
+.caption,
+.meta,
+.source,
+.footnote {
+font-family: "Source Sans 3", sans-serif;
+font-weight: 400;
+font-size: 16px;
+line-height: 1.50;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+body, p, li {
+font-size: 18px;
+line-height: 1.60;
+}
+
+.lead,
+.intro,
+.hero-subtitle,
+blockquote {
+font-size: 20px;
+line-height: 1.55;
+}
+
+small,
+.caption,
+.meta,
+.source,
+.footnote {
+font-size: 15px;
+}
+}

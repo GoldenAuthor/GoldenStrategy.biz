@@ -259,42 +259,45 @@ body:has(.mobile-nav-active) .toggler-x-icon {
   }
 }
 
-/* UPDATED GOLDEN STRATEGY TYPOGRAPHY */
+/* UPDATED GOLDEN STRATEGY TYPOGRAPHY (client v2 reference) */
+/* TYPOGRAPHY ONLY. Existing copy, layout, colors, graphics and H1 treatment are preserved. */
 
 /* BODY */
-body, p, li {
-font-family: "Source Sans 3", sans-serif;
-font-weight: 400;
+body, p, li, input, textarea, select {
+font-family: Arial, Helvetica, "Source Sans 3", sans-serif;
 font-size: 19px;
 line-height: 1.62;
+font-weight: 400;
 }
 
 /* DO NOT CHANGE HERO H1 FONT */
+h1, .hero h1, .hero h1 * {
+font-family: Georgia, "Times New Roman", serif;
+}
 
-/* H2 */
-h2 {
-font-family: "DM Sans", sans-serif;
+/* H2 + H3 kept on the serif display font (preserved, unchanged) */
+h2, .section-title, h3, .section-subtitle, .card-title {
+font-family: Georgia, "Times New Roman", serif;
+}
+h2, .section-title {
 font-weight: 600;
 font-size: clamp(31px, 3vw, 44px);
 line-height: 1.12;
 letter-spacing: -0.025em;
 }
-
-/* H3 */
-h3 {
-font-family: "DM Sans", sans-serif;
+h3, .section-subtitle, .card-title {
 font-weight: 600;
 font-size: clamp(23px, 2.2vw, 30px);
 line-height: 1.18;
 letter-spacing: -0.018em;
 }
 
-/* EYEBROWS / LABELS */
-.eyebrow,
-.kicker,
-.overline,
-.section-label {
-font-family: "DM Sans", sans-serif;
+/* Premium, highly legible secondary hierarchy. */
+h4 {
+font-family: "DM Sans", Arial, Helvetica, sans-serif;
+}
+h4, .eyebrow, .kicker, .overline, .section-label {
+font-family: "DM Sans", Arial, Helvetica, sans-serif;
 font-weight: 700;
 font-size: 18px;
 line-height: 1.30;
@@ -306,47 +309,36 @@ letter-spacing: 0.045em;
 .intro,
 .hero-subtitle,
 blockquote {
-font-family: "Source Sans 3", sans-serif;
-font-weight: 400;
+font-family: Arial, Helvetica, "Source Sans 3", sans-serif;
 font-size: 21px;
 line-height: 1.55;
 }
 
 /* BODY EMPHASIS */
-p strong,
-p b,
-li strong,
-li b {
-font-family: "Source Sans 3", sans-serif;
-font-weight: 600;
-}
+strong, b { font-weight: 600; }
 
 /* NAVIGATION + BUTTONS */
-nav,
-nav a,
-button,
-.btn,
-.button,
-.cta {
-font-family: "DM Sans", sans-serif;
+nav, nav a, .btn, button, .cta, .transform-cta, .authority, .path-label {
+font-family: "DM Sans", Arial, Helvetica, sans-serif;
 font-weight: 600;
 }
 
 /* SOURCES / FINE PRINT */
-small,
-.caption,
-.meta,
-.source,
-.footnote {
-font-family: "Source Sans 3", sans-serif;
-font-weight: 400;
+small, .small, .caption, .meta, .source, .footnote {
+font-family: Arial, Helvetica, "Source Sans 3", sans-serif;
 font-size: 16px;
 line-height: 1.50;
 }
 
+/* Restore component-specific sizes so the change improves type without redesigning layout. */
+.stat span { font-size: .78rem; line-height: 1.42; }
+.stat small { font-size: .72rem; line-height: 1.4; }
+.portrait-card p { font-size: 1rem; line-height: 1.58; }
+.transform { font-size: 1.18rem; line-height: 1.6; }
+
 /* MOBILE */
 @media (max-width: 768px) {
-body, p, li {
+body, p, li, input, textarea, select {
 font-size: 18px;
 line-height: 1.60;
 }
@@ -357,13 +349,5 @@ line-height: 1.60;
 blockquote {
 font-size: 20px;
 line-height: 1.55;
-}
-
-small,
-.caption,
-.meta,
-.source,
-.footnote {
-font-size: 15px;
 }
 }

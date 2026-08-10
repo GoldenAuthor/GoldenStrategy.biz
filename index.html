@@ -182,7 +182,7 @@ body .fbm-pillar ul li{margin:0;padding-left:8px;font-size:15.5px !important;lin
 .book p strong em{font-style:italic}
 .about-story p{font-size:18px;line-height:1.72;color:#dedbd4}
 .about-story p strong{color:#fff}
-@media(min-width:901px){.hero-copy{padding-bottom:10px!important}.path-buttons{margin-bottom:0!important}.architecture{padding-top:36px!important}}
+@media(min-width:901px){.hero-copy{padding-bottom:40px!important}.path-buttons{margin-bottom:0!important}.architecture{padding-top:36px!important}}
 
 /* v71 urgent corrections */
 .about-story .authority-highlight{
@@ -222,7 +222,7 @@ body .fbm-pillar ul li{margin:0;padding-left:8px;font-size:15.5px !important;lin
 .book p strong em{font-style:italic}
 .about-story p{font-size:18px;line-height:1.72;color:#dedbd4}
 .about-story p strong{color:#fff}
-@media(min-width:901px){.hero-copy{padding-bottom:10px!important}.path-buttons{margin-bottom:0!important}.architecture{padding-top:36px!important}}
+@media(min-width:901px){.hero-copy{padding-bottom:40px!important}.path-buttons{margin-bottom:0!important}.architecture{padding-top:36px!important}}
 </style><style>
 /* v59 controlled production refinements */
 .golden-strategy-logo{display:none;max-width:150px;max-height:102px;object-fit:contain}.golden-brand-lockup{display:flex;align-items:center;gap:14px}.golden-brand-lockup span{display:none;font-family:Arial,sans-serif;font-size:.67rem;letter-spacing:.16em;color:#fff;white-space:nowrap}.newsletter-logo,.footer-logo{max-width:190px}.nav-socials,.footer-socials{display:flex;gap:9px;align-items:center}.nav-socials a,.footer-socials a{width:31px;height:31px;border:1px solid rgba(203,170,77,.65);border-radius:50%;display:grid;place-items:center;color:var(--gold)}.nav-socials svg,.footer-socials svg{width:17px;height:17px;fill:currentColor;stroke:currentColor;stroke-width:1.6}.nav-socials svg rect,.nav-socials svg circle:not(.solid),.footer-socials svg rect,.footer-socials svg circle:not(.solid){fill:none}.nav-socials svg .solid,.footer-socials svg .solid{fill:currentColor;stroke:none}
@@ -263,7 +263,7 @@ body .fbm-pillar ul li{margin:0;padding-left:8px;font-size:15.5px !important;lin
 .book p strong em{font-style:italic}
 .about-story p{font-size:18px;line-height:1.72;color:#dedbd4}
 .about-story p strong{color:#fff}
-@media(min-width:901px){.hero-copy{padding-bottom:10px!important}.path-buttons{margin-bottom:0!important}.architecture{padding-top:36px!important}}
+@media(min-width:901px){.hero-copy{padding-bottom:40px!important}.path-buttons{margin-bottom:0!important}.architecture{padding-top:36px!important}}
 </style>
 <style>
 /* v62 focused corrections */
@@ -294,7 +294,7 @@ body .fbm-pillar ul li{margin:0;padding-left:8px;font-size:15.5px !important;lin
 .book p strong em{font-style:italic}
 .about-story p{font-size:18px;line-height:1.72;color:#dedbd4}
 .about-story p strong{color:#fff}
-@media(min-width:901px){.hero-copy{padding-bottom:10px!important}.path-buttons{margin-bottom:0!important}.architecture{padding-top:36px!important}}
+@media(min-width:901px){.hero-copy{padding-bottom:40px!important}.path-buttons{margin-bottom:0!important}.architecture{padding-top:36px!important}}
 </style>
 <style>
 /* v63 controlled refinements */
@@ -310,7 +310,7 @@ body .fbm-pillar ul li{margin:0;padding-left:8px;font-size:15.5px !important;lin
 .book p strong em{font-style:italic}
 .about-story p{font-size:18px;line-height:1.72;color:#dedbd4}
 .about-story p strong{color:#fff}
-@media(min-width:901px){.hero-copy{padding-bottom:10px!important}.path-buttons{margin-bottom:0!important}.architecture{padding-top:36px!important}}
+@media(min-width:901px){.hero-copy{padding-bottom:40px!important}.path-buttons{margin-bottom:0!important}.architecture{padding-top:36px!important}}
 </style>
 <style>
 /* v67 exact requested corrections */
@@ -394,7 +394,66 @@ body .fbm-pillar ul li{margin:0;padding-left:8px;font-size:15.5px !important;lin
   .original-architecture-pathways .pathway-intro .lead{font-size:1.18rem!important}
   .original-architecture-pathways .pathway-select{font-size:1.04rem!important}
 }
-</style><meta name="asset-delivery" content="images served as external files"/>
+</style>
+<style>
+/* Hero: fill column height; open vertical rhythm so copy isn’t smooshed */
+@media(min-width:901px){
+  .hero{
+    min-height:calc(100vh - 78px);
+    align-items:stretch;
+  }
+  .portrait,
+  .stat-rail,
+  .hero-copy{
+    min-height:100%;
+  }
+  .hero-copy{
+    display:flex !important;
+    flex-direction:column !important;
+    justify-content:space-evenly !important;
+    height:100% !important;
+    box-sizing:border-box !important;
+    padding-top:40px !important;
+    padding-bottom:40px !important;
+    gap:clamp(10px,1.4vh,22px) !important;
+  }
+  .hero-copy .authority{
+    margin:0 !important;
+    padding-bottom:14px !important;
+  }
+  .hero-copy .promise,
+  .hero-copy h1{
+    margin:0 !important;
+  }
+  .hero-copy .risk-callout{
+    margin:0 !important;
+    padding-top:18px !important;
+    padding-bottom:18px !important;
+  }
+  .hero-copy .transform-block{
+    margin:0 !important;
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+  }
+  .hero-copy .transform-cta,
+  .hero-copy .transform-intro,
+  .hero-copy .reveal-boxes,
+  .hero-copy .transform-final{
+    margin:0 !important;
+  }
+  .hero-copy .path-label{
+    margin:0 0 12px !important;
+  }
+  .hero-copy .path-buttons{
+    margin:0 !important;
+  }
+}
+#booking-form{
+  scroll-margin-top:96px;
+}
+</style>
+<meta name="asset-delivery" content="images served as external files"/>
 
 </head>
 <body>
@@ -437,8 +496,8 @@ body .fbm-pillar ul li{margin:0;padding-left:8px;font-size:15.5px !important;lin
 <div class="transform-block"><div class="transform-cta">Transform With Tiffany</div><p class="transform transform-intro">I transform <strong class="gold">Care Communities</strong> and <strong class="gold">University Campuses</strong> by adding the <strong class="gold">Human Intelligence</strong> traditional onboarding, assessments, and resources miss, revealing:</p><div class="reveal-boxes"><div class="reveal-box">Who is struggling</div><div class="reveal-box">Where belonging breaks down</div><div class="reveal-box">Where intervention must begin</div></div><p class="transform-final">Before suffering becomes an incident, transfer or withdrawal, turnover, or reputation hit.</p></div>
 <div class="path-label">Choose Your Pathway · Book Your Complimentary Intelligence Briefing</div>
 <div class="path-buttons">
-<a class="btn btn-primary" href="#healthcare">Book Healthcare Briefing →</a>
-<a class="btn btn-primary" href="#campus">Book Campus Briefing →</a>
+<a class="btn btn-primary" href="#booking-form">Book Healthcare Briefing →</a>
+<a class="btn btn-primary" href="#booking-form">Book Campus Briefing →</a>
 </div>
 </div>
 </section>

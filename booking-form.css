@@ -1,0 +1,225 @@
+/* Shared Transform / booking form layout */
+.cta-transform-frame {
+  margin-top: 40px;
+  padding: 34px;
+  border-radius: 26px;
+  background: url("contact-bg-art.png") center / cover no-repeat;
+}
+.cta-transform-panel {
+  background: #0b0b0a;
+  border-radius: 16px;
+  padding: 70px 60px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+.cta-transform-left .eyebrow {
+  margin-bottom: 18px;
+  color: var(--gold, #cbaa4d);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+.cta-transform-heading {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 800;
+  font-size: clamp(3.2rem, 5.6vw, 5rem);
+  line-height: 1.04;
+  margin: 0 0 30px;
+  color: #fff;
+}
+.cta-transform-heading .gold {
+  color: var(--gold, #cbaa4d);
+}
+.cta-transform-sub {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.75rem;
+  line-height: 1.35;
+  color: #fff;
+  margin: 0 0 34px;
+}
+.cta-transform-sub em {
+  color: var(--gold, #cbaa4d);
+  font-style: italic;
+}
+.cta-transform-callout {
+  margin: 0 0 34px;
+}
+.cta-transform-callout-title {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 1.28;
+  color: var(--gold, #cbaa4d);
+  margin: 0 0 10px;
+}
+.cta-transform-callout p {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 700;
+  font-size: 1.75rem;
+  line-height: 1.35;
+  color: #fff;
+  margin: 0;
+}
+.cta-transform-callout p .gold {
+  color: var(--gold, #cbaa4d);
+}
+.cta-transform-mission {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  color: #fff;
+  margin: 0;
+}
+.cta-transform-mission em {
+  color: var(--gold, #cbaa4d);
+  font-style: italic;
+}
+.cta-transform-card {
+  border: 1px solid var(--gold, #cbaa4d);
+  border-radius: 20px;
+  padding: 44px 50px 38px;
+  text-align: center;
+}
+.cta-transform-ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin: 0 auto 14px;
+}
+.cta-transform-ornament::before,
+.cta-transform-ornament::after {
+  content: "";
+  width: 100px;
+  height: 1px;
+  background: var(--gold, #cbaa4d);
+}
+.cta-transform-ornament span {
+  width: 16px;
+  height: 16px;
+  background: var(--gold, #cbaa4d);
+  transform: rotate(45deg);
+}
+.cta-transform-card-title {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 700;
+  font-size: clamp(2.8rem, 4.2vw, 3.8rem);
+  color: var(--gold, #cbaa4d);
+  margin: 0 0 14px;
+}
+.cta-transform-card-intro {
+  font-size: 1.3rem;
+  line-height: 1.42;
+  color: #fff;
+  margin: 0;
+}
+[data-booking-form] .kajabi-host,
+[data-booking-form] #kajabi-form {
+  width: 100%;
+  max-width: 100%;
+  margin: 24px auto 0;
+}
+[data-booking-form] .kajabi-form__title,
+[data-booking-form] .kajabi-form__subtitle {
+  display: none !important;
+}
+[data-booking-form] .kajabi-modal {
+  display: block !important;
+  position: unset !important;
+  background: transparent !important;
+}
+[data-booking-form] .kajabi-modal__close {
+  display: none !important;
+}
+[data-booking-form] .kajabi-modal__content,
+[data-booking-form] .kajabi-form__content {
+  margin: 0 !important;
+  max-width: 100% !important;
+  padding: 0 !important;
+  background: transparent !important;
+}
+.curated-privacy {
+  margin-top: 18px;
+  color: #fff;
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+.curated-privacy strong {
+  display: block;
+  margin-top: 10px;
+  color: var(--gold, #cbaa4d);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.78rem;
+}
+.nav-anchor {
+  display: block;
+  height: 0;
+  width: 0;
+  overflow: hidden;
+  position: relative;
+}
+#booking-form,
+#get-the-brief,
+.contact-booking-page {
+  scroll-margin-top: 130px;
+}
+.contact-booking-page {
+  padding: 90px 0 100px;
+  background: #050505;
+  border-top: 1px solid rgba(203, 170, 77, 0.22);
+}
+.contact-booking-page .cta-transform-frame {
+  margin-top: 0;
+}
+.get-the-brief-field .text {
+  color: #fff;
+}
+@media (max-width: 960px) {
+  .cta-transform-panel {
+    grid-template-columns: 1fr;
+    padding: 44px 30px;
+    gap: 40px;
+  }
+  .cta-transform-card {
+    padding: 36px 30px;
+  }
+  .cta-transform-heading {
+    font-size: 2.8rem;
+  }
+}
+@media (max-width: 600px) {
+  .cta-transform-frame {
+    padding: 14px;
+    border-radius: 18px;
+  }
+  .cta-transform-panel {
+    padding: 34px 20px;
+    border-radius: 12px;
+  }
+  .cta-transform-heading {
+    font-size: 2.2rem;
+  }
+  .cta-transform-sub,
+  .cta-transform-callout-title,
+  .cta-transform-callout p {
+    font-size: 1.3rem;
+  }
+  .cta-transform-mission {
+    font-size: 1.15rem;
+  }
+  .cta-transform-card-title {
+    font-size: 2.2rem;
+  }
+  .cta-transform-card-intro {
+    font-size: 1.1rem;
+  }
+  #booking-form,
+  #get-the-brief,
+  .contact-booking-page {
+    scroll-margin-top: 110px;
+  }
+}

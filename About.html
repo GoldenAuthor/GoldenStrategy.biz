@@ -13,15 +13,33 @@
   --obsidian:#070707;
   --white:#f5f2ec;
   --soft:#d8d4cc;
+  /* Exact Foreword reading ink */
+  --ink:#f4f1eb;
   --gold:#c7a354;
   --gold-soft:rgba(199,163,84,.20);
   --rule:rgba(199,163,84,.28);
   --max:1320px;
-  --measure:760px;
+  --measure:720px; /* match Foreword line length */
+  /* Exact Foreword body face — Canela for display only */
+  --body-font:"Avenir Next",Avenir,"Helvetica Neue",Arial,sans-serif;
+  --display-font:Canela,"Iowan Old Style",Baskerville,Georgia,serif;
+  --body-size:21px; /* Foreword is 18px; bump for older audience */
+  --body-lh:1.82;
+  --body-gap:1.55em;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--obsidian);color:var(--white);font-family:Avenir Next,Avenir,Helvetica Neue,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+body{
+  margin:0;
+  background:var(--obsidian);
+  color:var(--ink);
+  font-family:var(--body-font);
+  font-size:var(--body-size);
+  font-weight:400;
+  line-height:var(--body-lh);
+  text-rendering:optimizeLegibility;
+  -webkit-font-smoothing:antialiased;
+}
 img{display:block;max-width:100%}
 
 /* HERO — removes the large dead zone while keeping the current visual split */
@@ -29,23 +47,24 @@ img{display:block;max-width:100%}
 .hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);min-height:610px}
 .hero-copy{display:flex;align-items:center;padding:64px clamp(34px,5vw,84px)}
 .hero-copy-inner{max-width:650px}
-.hero h1{font-family:Canela,Georgia,'Times New Roman',serif;font-size:clamp(42px,4.2vw,68px);line-height:1.02;margin:0 0 24px;font-weight:600;letter-spacing:-.02em}
+.hero h1{font-family:var(--display-font);font-size:clamp(42px,4.2vw,68px);line-height:1.02;margin:0 0 24px;font-weight:600;letter-spacing:-.02em}
 .hero h1 .gold{color:var(--gold)}
-.hero p{font-size:clamp(17px,1.45vw,21px);line-height:1.55;margin:0;color:var(--white);max-width:610px}
-.hero .hero-kicker{font-family:Canela,Georgia,serif;color:var(--gold);font-size:clamp(22px,2vw,31px);line-height:1.3;margin-top:22px}
+.hero p{font-family:var(--body-font);font-size:var(--body-size);font-weight:400;line-height:var(--body-lh);margin:0;color:var(--ink);max-width:610px}
+.hero .hero-kicker{font-family:var(--display-font);color:var(--gold);font-size:clamp(24px,2vw,30px);line-height:1.35;margin-top:22px}
 .hero-art{min-height:610px;background:#0b0b0b;overflow:hidden}
 .hero-art img{width:100%;height:100%;object-fit:cover;object-position:center center}
 
-/* EDITORIAL BODY */
+/* EDITORIAL BODY — same readable treatment as Foreword .copy */
 .story{max-width:var(--max);margin:0 auto;padding:86px clamp(28px,5vw,84px) 48px}
 .story-section{display:grid;grid-template-columns:minmax(0,1fr);max-width:var(--measure);margin:0 auto 82px}
-.story-section p{font-size:clamp(18px,1.45vw,21px);line-height:1.72;margin:0 0 25px;color:var(--soft)}
+.story-section p{font-family:var(--body-font);font-size:var(--body-size);font-weight:400;line-height:var(--body-lh);margin:0 0 var(--body-gap);color:var(--ink)}
 .story-section p:last-child{margin-bottom:0}
-.story-section .lead{font-family:Canela,Georgia,serif;font-size:clamp(25px,2.4vw,36px);line-height:1.48;color:var(--white);margin-bottom:34px}
+/* Lead = same readable face as body (Foreword pattern: Canela only for display) */
+.story-section .lead{font-family:var(--body-font);font-size:var(--body-size);font-weight:500;line-height:var(--body-lh);color:#fff;margin-bottom:var(--body-gap)}
 
 
-.story-section strong{color:var(--white);font-weight:600}
-.story-section strong em,.story-section em strong{font-family:inherit;font-style:italic;font-weight:600;color:var(--white)}
+.story-section strong{color:#fff;font-weight:600}
+.story-section strong em,.story-section em strong{font-family:inherit;font-style:italic;font-weight:600;color:#fff}
 
 /* Quiet gold divider: editorial rhythm, not decoration */
 .divider{display:flex;align-items:center;justify-content:center;gap:14px;margin:76px auto;max-width:300px}
@@ -54,22 +73,22 @@ img{display:block;max-width:100%}
 
 /* Existing copy becomes a magazine pull-quote — no new words */
 .pull{max-width:980px;margin:90px auto;padding:10px 0 10px 34px;border-left:2px solid var(--gold)}
-.pull p{font-family:Canela,Georgia,serif;font-size:clamp(30px,3vw,48px);line-height:1.3;margin:0;color:var(--white)}
+.pull p{font-family:var(--display-font);font-size:clamp(28px,2.6vw,40px);line-height:1.35;margin:0;color:#fff}
 .pull strong{font-weight:700;color:var(--gold)}
-.pull.pull-sm p{font-size:clamp(27px,2.55vw,42px)}
+.pull.pull-sm p{font-size:clamp(26px,2.35vw,36px)}
 
-/* Art inset — contained, never allowed to create giant gaps */
+/* Art inset — contained pull-quote treatment, not body copy */
 .art-break{max-width:980px;margin:82px auto;display:grid;grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr);gap:56px;align-items:center}
 .art-break img{width:100%;max-width:390px;justify-self:end}
 .art-break .copy{max-width:560px}
-.art-break .copy p{font-family:Canela,Georgia,serif;font-size:clamp(26px,2.45vw,38px);line-height:1.42;margin:0;color:var(--white)}
+.art-break .copy p{font-family:var(--display-font);font-size:clamp(26px,2.35vw,36px);line-height:1.4;margin:0;color:#fff}
 
 
-/* Executive proof block — formatting emphasis only; copy unchanged */
+/* Executive proof block — same body face/size; weight + border carry emphasis */
 .power-block{max-width:980px;margin:72px auto 82px;padding:6px 0 6px 30px;border-left:2px solid var(--gold)}
-.power-block p{font-size:clamp(21px,1.75vw,26px);line-height:1.62;margin:0 0 18px;color:var(--white);font-weight:700}
+.power-block p{font-family:var(--body-font);font-size:var(--body-size);line-height:var(--body-lh);margin:0 0 var(--body-gap);color:#fff;font-weight:700}
 .power-block p:last-child{margin-bottom:0}
-.power-block .operational{font-family:Canela,Georgia,serif;color:var(--gold);font-size:clamp(27px,2.45vw,38px);line-height:1.4;letter-spacing:-.01em}
+.power-block .operational{font-family:var(--display-font);color:var(--gold);font-size:clamp(26px,2.35vw,36px);line-height:1.4;letter-spacing:-.01em;font-weight:600}
 
 /* APPROVED CURATED CARE INTELLIGENCE FORM — from uploaded developer package */
 .care-form-section{border-top:1px solid var(--rule);padding:72px clamp(16px,4vw,52px) 84px;background:#000}
@@ -84,8 +103,9 @@ img{display:block;max-width:100%}
 
 /* final movement */
 .final-section{max-width:var(--measure);margin:0 auto;padding-bottom:72px}
-.final-section p{font-size:clamp(18px,1.45vw,21px);line-height:1.72;margin:0 0 25px;color:var(--soft)}
-.final-section .future{font-family:Canela,Georgia,serif;color:var(--white);font-size:clamp(27px,2.5vw,38px);line-height:1.45;margin-top:38px}
+.final-section p{font-family:var(--body-font);font-size:var(--body-size);font-weight:400;line-height:var(--body-lh);margin:0 0 var(--body-gap);color:var(--ink)}
+/* Intentional short display line — not body copy */
+.final-section .future{font-family:var(--display-font);color:#fff;font-size:clamp(26px,2.35vw,36px);line-height:1.4;margin-top:38px;margin-bottom:var(--body-gap)}
 
 .cta-wrap{border-top:1px solid var(--rule);padding:66px 28px 88px;text-align:center}
 .cta{font-family:'Arial Narrow',Impact,Haettenschweiler,sans-serif;font-stretch:condensed;font-size:clamp(52px,7vw,104px);line-height:.95;text-transform:uppercase;letter-spacing:.01em;margin:0;color:var(--white);font-weight:500}
@@ -108,6 +128,8 @@ img{display:block;max-width:100%}
   .divider{margin:54px auto}
   .pull{margin:54px auto}
   .cta{font-size:clamp(44px,15vw,70px)}
+  /* Hold above Foreword’s 17px mobile size for older readers */
+  body,.hero p,.story-section p,.story-section .lead,.power-block p,.final-section p{font-size:20px;line-height:1.76}
 }
 /* ---------- Curated Care Intelligence form section ---------- */
   .curated-frame{
@@ -326,7 +348,7 @@ img{display:block;max-width:100%}
 </a>
 </div></div>
 <div class="navigation-wraper">
-<div class="nav-links"><a href="index.html#healthcare">Healthcare</a><a href="index.html#campus">Higher Education</a><a href="book-bonus.html">The Book</a><a href="coming-soon.html">Masterclasses</a><a href="private-care-intelligence.html">Private Care Intelligence</a><a href="About.html">About Tiffany</a><a href="contact.html">Contact</a></div><div aria-label="Social links" class="nav-socials"><a href="https://www.linkedin.com/in/tiffanygolden" rel="noopener" target="_blank" title="LinkedIn"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5.2 3.4a2.1 2.1 0 1 1 0 4.2 2.1 2.1 0 0 1 0-4.2ZM3.4 9h3.7v11.6H3.4V9Zm5.9 0h3.5v1.6h.1c.5-.9 1.7-2 3.9-2 4.1 0 4.9 2.7 4.9 6.2v5.8H18v-5.1c0-1.2 0-3.5-2.2-3.5s-2.5 1.7-2.5 3.4v5.2H9.3V9Z"></path></svg></a><a href="https://www.instagram.com/tiffanygolden" rel="noopener" target="_blank" title="Instagram"><svg aria-hidden="true" viewBox="0 0 24 24"><rect height="17.6" rx="5" width="17.6" x="3.2" y="3.2"></rect><circle cx="12" cy="12" r="4.2"></circle><circle class="solid" cx="17.5" cy="6.6" r="1.1"></circle></svg></a><a href="https://www.facebook.com/groups/1940377846389365" rel="noopener" target="_blank" title="Facebook"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M14.2 21v-8h2.8l.4-3.2h-3.2V7.7c0-.9.3-1.6 1.7-1.6h1.7V3.2c-.3 0-1.3-.2-2.5-.2-2.5 0-4.3 1.5-4.3 4.4v2.4H8V13h2.8v8h3.4Z"></path></svg></a></div><a class="btn btn-primary" href="#contact">Book Tiffany</a>
+<div class="nav-links"><a href="index.html#healthcare">Healthcare</a><a href="index.html#campus">Higher Education</a><a href="index.html#book">The Book</a><a href="coming-soon.html">Masterclasses</a><a href="private-care-intelligence.html">Private Care Intelligence</a><a href="About.html">About Tiffany</a><a href="contact.html">Contact</a></div><div aria-label="Social links" class="nav-socials"><a href="https://www.linkedin.com/in/tiffanygolden" rel="noopener" target="_blank" title="LinkedIn"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5.2 3.4a2.1 2.1 0 1 1 0 4.2 2.1 2.1 0 0 1 0-4.2ZM3.4 9h3.7v11.6H3.4V9Zm5.9 0h3.5v1.6h.1c.5-.9 1.7-2 3.9-2 4.1 0 4.9 2.7 4.9 6.2v5.8H18v-5.1c0-1.2 0-3.5-2.2-3.5s-2.5 1.7-2.5 3.4v5.2H9.3V9Z"></path></svg></a><a href="https://www.instagram.com/tiffanygolden" rel="noopener" target="_blank" title="Instagram"><svg aria-hidden="true" viewBox="0 0 24 24"><rect height="17.6" rx="5" width="17.6" x="3.2" y="3.2"></rect><circle cx="12" cy="12" r="4.2"></circle><circle class="solid" cx="17.5" cy="6.6" r="1.1"></circle></svg></a><a href="https://www.facebook.com/groups/1940377846389365" rel="noopener" target="_blank" title="Facebook"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M14.2 21v-8h2.8l.4-3.2h-3.2V7.7c0-.9.3-1.6 1.7-1.6h1.7V3.2c-.3 0-1.3-.2-2.5-.2-2.5 0-4.3 1.5-4.3 4.4v2.4H8V13h2.8v8h3.4Z"></path></svg></a></div><a class="btn btn-primary" href="book-bonus.html">Book Tiffany</a>
 </div>
 <button class="nav-toggler">
           <svg class="toggler-hamburg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">

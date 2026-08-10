@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Tiffany Golden — About</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,500;9..40,600;9..40,700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="header-fotter.css" rel="stylesheet">
+<style>
+:root{
+  --obsidian:#070707;
+  --white:#f5f2ec;
+  --soft:#d8d4cc;
+  --gold:#c7a354;
+  --gold-soft:rgba(199,163,84,.20);
+  --rule:rgba(199,163,84,.28);
+  --max:1320px;
+  --measure:760px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--obsidian);color:var(--white);font-family:Avenir Next,Avenir,Helvetica Neue,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+
+* {
+    box-sizing: border-box;
+}
+
+
+
+.thank-you-page {
+    width: calc(100% - 80px);
+    max-width: 1400px;
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 30px 40px 60px;
+    border-left: 1px solid #c9a83e;
+    border-right: 1px solid #c9a83e;
+    text-align: center;
+}
+
+/* Top line */
+
+.gold-line {
+    position: relative;
+    height: 1px;
+    background: #c9a83e;
+    margin-bottom: 45px;
+}
+
+.gold-line span {
+    position: absolute;
+    left: 50%;
+    top: -9px;
+    transform: translateX(-50%);
+    background: #050505;
+    color: #d5af3e;
+    padding: 0 15px;
+    font-size: 16px;
+}
+
+/* Heading */
+
+.eyebrow {
+    color: #d5af3e;
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: 5px;
+    margin-bottom: 18px;
+    text-align: center;
+    padding-top: 50px;
+}
+
+h1 {
+    margin: 0;
+    font-family: Georgia, serif;
+    font-size: clamp(42px, 5vw, 72px);
+    font-weight: 400;
+    line-height: 1.1;
+     text-align: center;
+}
+
+h2 {
+    margin: 5px 0 25px;
+    color: #d5af3e;
+    font-family: Georgia, serif;
+    font-size: clamp(40px, 5vw, 68px);
+    font-weight: 400;
+     text-align: center;
+}
+
+/* Dividers */
+
+.divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    margin: 25px auto;
+    max-width: 380px;
+}
+
+.divider span {
+    height: 1px;
+    flex: 1;
+    background: #c9a83e;
+}
+
+.divider b {
+    color: #d5af3e;
+    font-size: 13px;
+}
+
+/* Intro */
+
+.intro {
+    max-width: 850px;
+    margin: 30px auto;
+    font-size: 20px;
+    line-height: 1.8;
+    color: #eeeeee;
+}
+
+.intro strong {
+    color: #d5af3e;
+    font-family: Georgia, serif;
+    font-weight: 400;
+}
+
+/* Check */
+
+.check-icon {
+    width: 72px;
+    height: 72px;
+    margin: 35px auto 25px;
+    border: 1px solid #d5af3e;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #d5af3e;
+    font-size: 42px;
+}
+
+/* Message */
+
+h3 {
+    margin: 0;
+    color: #d5af3e;
+    font-size: 20px;
+    letter-spacing: 3px;
+     text-align: center;
+}
+
+.highlight {
+    margin: 12px auto 30px;
+    max-width: 900px;
+    color: #d5af3e;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    line-height: 1.7;
+}
+
+.section-divider {
+    margin-top: 35px;
+}
+
+h4 {
+    margin: 30px 0;
+    font-size: 20px;
+    letter-spacing: 3px;
+     text-align: center;
+}
+
+/* Steps */
+
+.steps {
+    display: flex;
+    max-width: 1000px;
+    margin: 0 auto 45px;
+}
+
+.step {
+    flex: 1;
+    padding: 10px 35px;
+    border-right: 1px solid #c9a83e;
+}
+
+.step:last-child {
+    border-right: 0;
+}
+
+.step-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 20px;
+    border: 1px solid #d5af3e;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #d5af3e;
+    font-size: 25px;
+}
+
+.step h5 {
+    margin: 0 0 12px;
+    font-size: 16px;
+    letter-spacing: 1.5px;
+}
+
+.step p {
+    margin: 0;
+    color: #dddddd;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+/* Button */
+
+.home-button {
+    display: block;
+    padding: 18px 55px;
+    border: 1px solid #d5af3e;
+    color: #d5af3e;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    transition: 0.3s ease;
+    width: fit-content;
+    margin: 40px auto 0;
+    text-align: center;
+    
+}
+
+
+.home-button span {
+    margin-left: 10px;
+}
+
+.home-button:hover {
+    background: #d5af3e;
+    color: #050505;
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+    .thank-you-page {
+        width: calc(100% - 30px);
+        padding: 25px 20px 45px;
+    }
+
+    h1 {
+        font-size: 42px;
+    }
+
+    h2 {
+        font-size: 40px;
+    }
+
+    .intro {
+        font-size: 17px;
+        line-height: 1.7;
+    }
+
+    .highlight {
+        font-size: 15px;
+    }
+
+    .steps {
+        flex-direction: column;
+    }
+
+    .step {
+        padding: 25px 10px;
+        border-right: 0;
+        border-bottom: 1px solid #c9a83e;
+    }
+
+    .step:last-child {
+        border-bottom: 0;
+    }
+
+    .home-button {
+        width: 100%;
+        padding: 17px 15px;
+    }
+}
+</style>
+</head>
+<body>
+<main>
+<nav>
+	<div class="wrap nav-inner"><div class="brand"><div aria-label="Golden Strategy" class="golden-brand-lockup"><a href="index.html"><img alt="Golden Strategy" class="golden-strategy-logo" src="https://images.squarespace-cdn.com/content/v1/67017efaf00a0b7647706177/1728151317605-AA6DP19JDAZ0BQ6E9QAD/Golden.png?format=1500w">
+</a>
+</div></div>
+<div class="navigation-wraper">
+<div class="nav-links"><a href="index.html#healthcare">Healthcare</a><a href="index.html#campus">Higher Education</a><a href="book-bonus.html">The Book</a><a href="coming-soon.html">Masterclasses</a><a href="private-care-intelligence.html">Private Care Intelligence</a><a href="About.html">About Tiffany</a><a href="contact.html">Contact</a></div><div aria-label="Social links" class="nav-socials"><a href="https://www.linkedin.com/in/tiffanygolden" rel="noopener" target="_blank" title="LinkedIn"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5.2 3.4a2.1 2.1 0 1 1 0 4.2 2.1 2.1 0 0 1 0-4.2ZM3.4 9h3.7v11.6H3.4V9Zm5.9 0h3.5v1.6h.1c.5-.9 1.7-2 3.9-2 4.1 0 4.9 2.7 4.9 6.2v5.8H18v-5.1c0-1.2 0-3.5-2.2-3.5s-2.5 1.7-2.5 3.4v5.2H9.3V9Z"></path></svg></a><a href="https://www.instagram.com/tiffanygolden" rel="noopener" target="_blank" title="Instagram"><svg aria-hidden="true" viewBox="0 0 24 24"><rect height="17.6" rx="5" width="17.6" x="3.2" y="3.2"></rect><circle cx="12" cy="12" r="4.2"></circle><circle class="solid" cx="17.5" cy="6.6" r="1.1"></circle></svg></a><a href="https://www.facebook.com/groups/1940377846389365" rel="noopener" target="_blank" title="Facebook"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M14.2 21v-8h2.8l.4-3.2h-3.2V7.7c0-.9.3-1.6 1.7-1.6h1.7V3.2c-.3 0-1.3-.2-2.5-.2-2.5 0-4.3 1.5-4.3 4.4v2.4H8V13h2.8v8h3.4Z"></path></svg></a></div><a class="btn btn-primary" href="#contact">Book Tiffany</a>
+</div>
+<button class="nav-toggler">
+          <svg class="toggler-hamburg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+            <path d="M96 160C96 142.3 110.3 128 128 128L512 128C529.7 128 544 142.3 544 160C544 177.7 529.7 192 512 192L128 192C110.3 192 96 177.7 96 160zM96 320C96 302.3 110.3 288 128 288L512 288C529.7 288 544 302.3 544 320C544 337.7 529.7 352 512 352L128 352C110.3 352 96 337.7 96 320zM544 480C544 497.7 529.7 512 512 512L128 512C110.3 512 96 497.7 96 480C96 462.3 110.3 448 128 448L512 448C529.7 448 544 462.3 544 480z"></path>
+          </svg>
+          <svg class="toggler-x-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+            <path d="M504.6 148.5C515.9 134.9 514.1 114.7 500.5 103.4C486.9 92.1 466.7 93.9 455.4 107.5L320 270L184.6 107.5C173.3 93.9 153.1 92.1 139.5 103.4C125.9 114.7 124.1 134.9 135.4 148.5L278.3 320L135.4 491.5C124.1 505.1 125.9 525.3 139.5 536.6C153.1 547.9 173.3 546.1 184.6 532.5L320 370L455.4 532.5C466.7 546.1 486.9 547.9 500.5 536.6C514.1 525.3 515.9 505.1 504.6 491.5L361.7 320L504.6 148.5z"></path>
+          </svg>
+        </button>
+</div>
+</nav>
+        
+
+        <div class="eyebrow">THANK YOU!</div>
+
+        <div class="divider">
+            <span></span>
+            <b>◆</b>
+            <span></span>
+        </div>
+
+        <h1>Your Request Has Been Received.</h1>
+
+        <h2>We're On It.</h2>
+
+        <div class="divider">
+            <span></span>
+            <b>◆</b>
+            <span></span>
+        </div>
+
+        <p class="intro">
+            Tiffany and her team are reviewing your request.
+            You’ll receive a confirmation email shortly, and we’ll be
+            in touch soon to schedule your
+            <strong>Private Care Intelligence Briefing.</strong>
+        </p>
+
+        <div class="check-icon">✓</div>
+
+        <h3>THIS IS MORE THAN A CONVERSATION.</h3>
+
+        <p class="highlight">
+            IT’S THE START OF CARE INTELLIGENCE THAT PROTECTS WHAT MATTERS MOST.
+        </p>
+
+        <div class="divider section-divider">
+            <span></span>
+            <b>◆</b>
+            <span></span>
+        </div>
+
+        <h4>WHAT HAPPENS NEXT?</h4>
+
+        <div class="steps">
+
+            <div class="step">
+                <div class="step-icon">✉</div>
+                <h5>CHECK YOUR EMAIL</h5>
+                <p>
+                    You’ll receive a confirmation shortly with next steps.
+                </p>
+            </div>
+
+            <div class="step">
+                <div class="step-icon">▣</div>
+                <h5>WE’LL BE IN TOUCH</h5>
+                <p>
+                    Our team will reach out to schedule your briefing.
+                </p>
+            </div>
+
+            <div class="step">
+                <div class="step-icon">●●</div>
+                <h5>PREPARE FOR IMPACT</h5>
+                <p>
+                    Get ready for clarity, strategy, and a better path forward.
+                </p>
+            </div>
+
+        </div>
+
+        <a href="index.html" class="home-button">
+            RETURN TO HOME <span>◆</span>
+        </a>
+<footer>
+      <div class="wrap footer-inner footer-v58">
+        <div class="footer-brand">
+          <img alt="Golden Strategy" class="golden-strategy-logo footer-logo" src="https://images.squarespace-cdn.com/content/v1/67017efaf00a0b7647706177/1728151317605-AA6DP19JDAZ0BQ6E9QAD/Golden.png?format=1500w">
+          <strong>Tiffany Golden, CSA®</strong>
+        </div>
+        <div>Senior Care Intelligence · Campus Systems Architecture · Private Care Intelligence</div>
+        <div class="footer-socials">
+          <a href="https://www.linkedin.com/in/tiffanygolden" rel="noopener" target="_blank" title="LinkedIn">
+            <svg aria-hidden="true" viewBox="0 0 24 24">
+              <path d="M5.2 3.4a2.1 2.1 0 1 1 0 4.2 2.1 2.1 0 0 1 0-4.2ZM3.4 9h3.7v11.6H3.4V9Zm5.9 0h3.5v1.6h.1c.5-.9 1.7-2 3.9-2 4.1 0 4.9 2.7 4.9 6.2v5.8H18v-5.1c0-1.2 0-3.5-2.2-3.5s-2.5 1.7-2.5 3.4v5.2H9.3V9Z"></path>
+            </svg>
+          </a>
+          <a href="https://www.instagram.com/tiffanygolden" rel="noopener" target="_blank" title="Instagram">
+            <svg aria-hidden="true" viewBox="0 0 24 24">
+              <rect height="17.6" rx="5" width="17.6" x="3.2" y="3.2"></rect>
+              <circle cx="12" cy="12" r="4.2"></circle>
+              <circle class="solid" cx="17.5" cy="6.6" r="1.1"></circle>
+            </svg>
+          </a>
+          <a href="https://www.facebook.com/groups/1940377846389365" rel="noopener" target="_blank" title="Facebook">
+            <svg aria-hidden="true" viewBox="0 0 24 24">
+              <path d="M14.2 21v-8h2.8l.4-3.2h-3.2V7.7c0-.9.3-1.6 1.7-1.6h1.7V3.2c-.3 0-1.3-.2-2.5-.2-2.5 0-4.3 1.5-4.3 4.4v2.4H8V13h2.8v8h3.4Z"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </footer>
+	<script>
+      let toggler = document.querySelector(".nav-toggler");
+      let wraper = document.querySelector(".navigation-wraper");
+      toggler.addEventListener("click", () => {
+        wraper.classList.toggle("mobile-nav-active");
+      });
+    </script>
+</main>
+</body>
+</html>

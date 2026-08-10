@@ -163,11 +163,20 @@ body #kajabi-form .curated-privacy strong {
   align-items: center;
   gap: 14px;
 }
-.golden-strategy-logo {
-  display: block;
+.golden-brand-lockup a {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+.golden-strategy-logo,
+.brand .golden-strategy-logo,
+nav .golden-strategy-logo {
+  display: block !important;
   max-width: 172px;
   max-height: 102px;
   object-fit: contain;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 .nav-socials,
 .footer-socials {

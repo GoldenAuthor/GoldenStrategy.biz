@@ -103,7 +103,8 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
+  gap: 12px;
+  flex-wrap: nowrap;
 }
 .brand {
   font-family: Georgia, serif;
@@ -112,19 +113,26 @@ nav {
   letter-spacing: 0.14em;
   font-size: 1rem;
   font-weight: 800;
+  flex: 0 0 auto;
 }
 .nav-links {
   display: flex;
-  gap: 20px;
+  gap: 14px;
   align-items: center;
+  flex-wrap: nowrap;
+  flex: 1 1 auto;
+  justify-content: flex-end;
+  min-width: 0;
 }
 .nav-links a {
   color: #fff;
   text-decoration: none;
   text-transform: uppercase;
-  letter-spacing: 0;
-  font-size: 13px;
+  letter-spacing: 0.06em;
+  font-size: 12px;
   font-weight: 800;
+  white-space: nowrap;
+  flex: 0 0 auto;
 }
 body #kajabi-form .curated-privacy strong {
     display: block;
@@ -172,11 +180,25 @@ body #kajabi-form .curated-privacy strong {
 .brand .golden-strategy-logo,
 nav .golden-strategy-logo {
   display: block !important;
-  max-width: 172px;
-  max-height: 102px;
+  max-width: 128px;
+  max-height: 72px;
+  width: auto;
+  height: auto;
   object-fit: contain;
   visibility: visible !important;
   opacity: 1 !important;
+}
+.nav-socials {
+  flex: 0 0 auto;
+  flex-wrap: nowrap;
+}
+nav .btn.btn-primary {
+  white-space: nowrap;
+  flex: 0 0 auto;
+  padding-left: 18px;
+  padding-right: 18px;
+  font-size: 15px;
+  min-height: 44px;
 }
 .nav-socials,
 .footer-socials {

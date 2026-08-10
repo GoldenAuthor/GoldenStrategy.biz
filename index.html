@@ -575,7 +575,19 @@ body .fbm-pillar ul li{margin:0;padding-left:8px;font-size:15.5px !important;lin
 
      
 
+<script>
+(function(){
+  const modal=document.querySelector('[data-fbm-modal]');
+  if(!modal) return;
+  const close=()=>{modal.hidden=true;document.documentElement.style.overflow='';};
+  const open=()=>{modal.hidden=false;document.documentElement.style.overflow='hidden';requestAnimationFrame(()=>modal.querySelector('a,button,input')?.focus());};
+  modal.querySelector('[data-fbm-close]')?.addEventListener('click',close);
+  modal.addEventListener('click',e=>{if(e.target===modal)close();});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!modal.hidden)close();});
+  window.FiveBoxMethodPopup={open,close};
+})();
 
+</script>
 
 <script id="fbm-popup-script">
 /* =========================================================================
@@ -640,7 +652,7 @@ body .fbm-pillar ul li{margin:0;padding-left:8px;font-size:15.5px !important;lin
     document.body.style.overflow = 'hidden';
     document.addEventListener('keydown', onKeydown, true);
 
-    var closeBtn = m.querySelector('[data-close]');
+    var closeBtn = m.querySelector('[data-fbm-close]');
     if (closeBtn) closeBtn.focus();
 
     fire('fbm:popup_open');

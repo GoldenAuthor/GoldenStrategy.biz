@@ -123,9 +123,10 @@ nav {
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 0;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 800;
 }
+
 .nav-links a:hover {
   color: var(--gold);
 }

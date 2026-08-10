@@ -253,6 +253,20 @@
   .kajabi-modal__close{
     display:none !important;
   }
+  .care-form-card {
+    border: 3px solid #e6ad2f !important;
+}
+  #kajabi-form.kajabi-form--inline{
+    padding-inline: 0 !important;
+    padding-block: 0px !important;
+  }
+  body .kajabi-form__content input, .kajabi-form__content select {
+    border: 1.5px solid #e6ad2f !important;
+    border-radius: 0 !important;
+    height: 75px !important;
+    padding: 0 30px !important;
+    font-size: 20px !important;
+}
   .kajabi-modal__content{
     margin:0 !important;
     max-width:100% !important;
@@ -265,6 +279,15 @@
     padding:0 !important;
     background:#0b0b0a !important;
   }
+  .email-field.kajabi-form__form-item{
+    margin-bottom: 45px !important;
+  }
+  #kajabi-form .kajabi-form__form-item.checkbox-field input[type=checkbox]+span:after{
+    top: 19px !important;
+    left: 12px !important;
+    width: 14px !important;
+    height: 10px !important;
+  }
   .kajabi-form__content input,
   .kajabi-form__content select{
     min-height:58px;
@@ -275,8 +298,10 @@
     border:1px solid rgba(230,178,74,.55) !important;
   }
   .kajabi-form__content input::placeholder{
-    opacity:.5;
+    opacity:.6;
     color:#fff !important;
+    font-size: 20px !important;
+    font-weight: 300 !important
   }
   .kajabi-form__content textarea{
     padding:12px 18px;
@@ -286,6 +311,15 @@
     border:1px solid rgba(230,178,74,.55) !important;
     border-radius:6px !important;
   }
+  #kajabi-form .kajabi-form__form-item textarea {
+    height: 100px;
+    margin: 25px 0 0 0;
+    border-radius: 0 !important;
+    border: 1.5px solid #e6ad2f !important;
+    border-radius: 0 !important;
+    padding: 15px 20px !important;
+    font-size: 20px !important;
+}
   .kajabi-form__btn{
     background:var(--gold) !important;
     color:#080808 !important;
@@ -301,21 +335,58 @@
   }
   .checkbox-field.kajabi-form__form-item .text{
     color:#fff;
+    font-size: 20px !important;
   }
   .curated-privacy{
-    margin-top:26px;
+    margin-top:10px;
     font-size:.95rem;
     color:#fff;
+    text-align: center;
   }
-  .curated-privacy strong{
-    display:block;
-    margin-top:6px;
-    font-size:.78rem;
-    letter-spacing:.08em;
-    text-transform:uppercase;
-    color:var(--gold);
-    font-weight:800;
+  .care-art-frame {
+    border-right: 5px solid #e6ad2f !important;
+    border-left: 5px solid #e6ad2f !important;
+}
+  #kajabi-form .kajabi-form__btn{
+    width: 100% !important;
+    min-height: 70px !important;
+    margin-top: 0 !important;
+    border: 0 !important;
+    border-radius: 4px !important;
+    background: linear-gradient(90deg, #e9ac2f, #f3b844) !important;
+    color: #060606 !important;
+    font-size: 21px !important;
+    font-weight: 900 !important;
+    letter-spacing: .05em !important;
+    text-transform: uppercase !important;
+    cursor: pointer !important;
+    border-radius: 0 !important;
   }
+  .curated-privacy {
+    margin-top: 10px !important;
+    font-size: 17px !important;
+    color: #fff !important;
+    text-align: center !important;
+    font-weight: 100 !important;
+}
+.curated-privacy strong {
+    display: block;
+    margin-top: 6px;
+    font-size: 17px !important;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: #e6ad2f !important;
+    font-weight: 400 !important;
+}
+  #kajabi-form .kajabi-form__form-item.checkbox-field label:before {
+    border-radius: 0 !important;
+    top: 6px !important;
+    display: inline-block !important; 
+    width: 30px !important;
+    height: 30px !important;
+    margin-inline-end: 10px !important;
+    border: 4px solid #e6ad2f !important;
+}
   @media(max-width:640px){
     .curated-frame{padding:14px;border-radius:18px;margin:50px auto 60px}
     .curated-card{padding:36px 26px 32px;border-radius:14px}
@@ -409,7 +480,7 @@
     <h2 class="curated-title">Curated Care Intelligence</h2>
     <p class="curated-sub">Introduce yourself &amp; how I can help.</p>
     <div id="curated-kajabi-form">
-      <script src="https://tiffany-golden.mykajabi.com/forms/2149689248/embed.js"></script>
+    <script src="https://tiffany-golden.mykajabi.com/forms/2149689248/embed.js"></script>
     </div>
     <div class="curated-privacy">
       Your information is kept strictly confidential.
@@ -453,6 +524,6 @@
         wraper.classList.toggle("mobile-nav-active");
       });
     </script>
-	
+
 </body>
 </html>

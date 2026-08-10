@@ -9,36 +9,314 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,500;9..40,600;9..40,700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
 <link href="header-fotter.css" rel="stylesheet">
 <style>
-:root{--obsidian:#070707;--white:#fff;--gold:#cbaa4d;--soft:#f4f1eb;}
-*{box-sizing:border-box}
-.hero{display:grid;grid-template-columns:1fr 1fr;align-items:stretch;border-bottom:1px solid rgba(208,163,66,.4)}
-.hero-copy{padding:84px 64px 72px;display:flex;flex-direction:column;justify-content:center}
-.name{color: var(--white);font-size: clamp(2.25rem,2.95vw,3.72rem);line-height: 1.02;margin: 0 0 34px;}
-.lead{margin:0;max-width:680px}
-.audience{font-family:"Lora",Georgia,serif;color:var(--gold);font-size:clamp(24px,2vw,31px);line-height:1.35;margin-top:20px}
-.hero-photo{min-height:760px;overflow:hidden;background:#111}
-.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
-.chapter{padding:86px 72px 22px}
-.chapter-inner{width: min(1500px,92vw);  margin: auto}
-.chapter + .chapter {border-top: 1px solid var(--line);}
-.before{padding-top:72px}
-#the-future {border-bottom: 1px solid var(--line);}
-.editorial-float{float:right;width:min(46%,520px);margin:4px 0 34px 56px}
-.editorial-float img{display:block;width:100%;height:auto}
-.pull{font-family:"Lora",Georgia,serif;color:var(--gold);font-size:clamp(31px,3.1vw,48px);line-height:1.24;margin:38px 0 30px}
-.signal{font-family:"Lora",Georgia,serif;font-size:clamp(27px,2.5vw,39px);line-height:1.32;color:var(--white);padding:28px 0;border-top:1px solid var(--gold);border-bottom:1px solid var(--gold);margin:42px 0}
-.clear{clear:both}
-.turning{padding-top:76px}
-.built{padding-top:76px}
-.future{padding-top:76px;padding-bottom:50px}
-.lets{display:flex;justify-content:center;background:var(--white);padding:0;overflow:hidden;margin-top:62px}
-.lets img{display:block;width:min(100%,720px);height:auto}
-@media(max-width:960px){
- .hero{flex-direction: column-reverse; display: flex;}
- .hero-copy,.chapter{padding-left:28px;padding-right:28px}
- .hero-photo{min-height:auto;}
- .editorial-float{float:none;width:min(100%,620px);margin:28px auto 36px}
+:root{
+  --obsidian:#070707;
+  --white:#f5f2ec;
+  --soft:#d8d4cc;
+  --gold:#c7a354;
+  --gold-soft:rgba(199,163,84,.20);
+  --rule:rgba(199,163,84,.28);
+  --max:1320px;
+  --measure:760px;
 }
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--obsidian);color:var(--white);font-family:Avenir Next,Avenir,Helvetica Neue,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+
+/* HERO — removes the large dead zone while keeping the current visual split */
+.hero{border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);min-height:610px}
+.hero-copy{display:flex;align-items:center;padding:64px clamp(34px,5vw,84px)}
+.hero-copy-inner{max-width:650px}
+.hero h1{font-family:Canela,Georgia,'Times New Roman',serif;font-size:clamp(42px,4.2vw,68px);line-height:1.02;margin:0 0 24px;font-weight:600;letter-spacing:-.02em}
+.hero h1 .gold{color:var(--gold)}
+.hero p{font-size:clamp(17px,1.45vw,21px);line-height:1.55;margin:0;color:var(--white);max-width:610px}
+.hero .hero-kicker{font-family:Canela,Georgia,serif;color:var(--gold);font-size:clamp(22px,2vw,31px);line-height:1.3;margin-top:22px}
+.hero-art{min-height:610px;background:#0b0b0b;overflow:hidden}
+.hero-art img{width:100%;height:100%;object-fit:cover;object-position:center center}
+
+/* EDITORIAL BODY */
+.story{max-width:var(--max);margin:0 auto;padding:86px clamp(28px,5vw,84px) 48px}
+.story-section{display:grid;grid-template-columns:minmax(0,1fr);max-width:var(--measure);margin:0 auto 82px}
+.story-section p{font-size:clamp(18px,1.45vw,21px);line-height:1.72;margin:0 0 25px;color:var(--soft)}
+.story-section p:last-child{margin-bottom:0}
+.story-section .lead{font-family:Canela,Georgia,serif;font-size:clamp(25px,2.4vw,36px);line-height:1.48;color:var(--white);margin-bottom:34px}
+
+
+.story-section strong{color:var(--white);font-weight:600}
+.story-section strong em,.story-section em strong{font-family:inherit;font-style:italic;font-weight:600;color:var(--white)}
+
+/* Quiet gold divider: editorial rhythm, not decoration */
+.divider{display:flex;align-items:center;justify-content:center;gap:14px;margin:76px auto;max-width:300px}
+.divider span{height:1px;flex:1;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.divider i{width:7px;height:7px;border:1px solid var(--gold);transform:rotate(45deg);display:block}
+
+/* Existing copy becomes a magazine pull-quote — no new words */
+.pull{max-width:980px;margin:90px auto;padding:10px 0 10px 34px;border-left:2px solid var(--gold)}
+.pull p{font-family:Canela,Georgia,serif;font-size:clamp(30px,3vw,48px);line-height:1.3;margin:0;color:var(--white)}
+.pull strong{font-weight:700;color:var(--gold)}
+.pull.pull-sm p{font-size:clamp(27px,2.55vw,42px)}
+
+/* Art inset — contained, never allowed to create giant gaps */
+.art-break{max-width:980px;margin:82px auto;display:grid;grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr);gap:56px;align-items:center}
+.art-break img{width:100%;max-width:390px;justify-self:end}
+.art-break .copy{max-width:560px}
+.art-break .copy p{font-family:Canela,Georgia,serif;font-size:clamp(26px,2.45vw,38px);line-height:1.42;margin:0;color:var(--white)}
+
+
+/* Executive proof block — formatting emphasis only; copy unchanged */
+.power-block{max-width:980px;margin:72px auto 82px;padding:6px 0 6px 30px;border-left:2px solid var(--gold)}
+.power-block p{font-size:clamp(21px,1.75vw,26px);line-height:1.62;margin:0 0 18px;color:var(--white);font-weight:700}
+.power-block p:last-child{margin-bottom:0}
+.power-block .operational{font-family:Canela,Georgia,serif;color:var(--gold);font-size:clamp(27px,2.45vw,38px);line-height:1.4;letter-spacing:-.01em}
+
+/* APPROVED CURATED CARE INTELLIGENCE FORM — from uploaded developer package */
+.care-form-section{border-top:1px solid var(--rule);padding:72px clamp(16px,4vw,52px) 84px;background:#000}
+.care-art-frame{width:min(1400px,100%);margin:0 auto;padding:39px 52px 35px;background:url("contact-bg-art.png") center/cover no-repeat}
+.care-form-card{width:100%;border:2px solid #e6ad2f;border-radius:28px;background:rgba(7,9,12,.985);padding:26px 65px 24px;font-family:Arial,Helvetica,sans-serif;color:#f7f6f3}
+.care-ornament{display:flex;align-items:center;justify-content:center;gap:18px;margin:0 auto 10px}.care-ornament::before,.care-ornament::after{content:"";width:120px;height:1px;background:#e6ad2f}.care-ornament span{width:18px;height:18px;background:#e6ad2f;transform:rotate(45deg)}
+.care-form-card h2{margin:0 0 8px;text-align:center;color:#e6ad2f;font-family:Georgia,"Times New Roman",serif;font-size:clamp(48px,5.4vw,78px);line-height:1.05;font-weight:700;letter-spacing:-.025em}
+.care-form-card .care-intro{margin:0 auto 24px;text-align:center;font-size:22px;line-height:1.3}
+.care-form-card .care-field,.care-form-card textarea{width:100%;border:1.5px solid #e6ad2f;background:linear-gradient(90deg,#16191d,#111317);color:#fff;outline:none;font:inherit}.care-form-card .care-field{height:70px;padding:0 28px;margin-bottom:13px;font-size:20px}.care-form-card .care-field::placeholder,.care-form-card textarea::placeholder{color:#8f9298;opacity:1}.care-form-card .care-field:focus,.care-form-card textarea:focus{border-color:#efb53d;box-shadow:0 0 0 2px rgba(239,181,61,.12)}
+.care-support-group{margin:22px 0 0;padding:0;border:0}.care-support-group legend{padding:0;color:#e6ad2f;font-size:18px;line-height:1.2;letter-spacing:.05em;text-transform:uppercase;font-weight:800}.care-select-note{margin:6px 0 18px;font-size:18px}.care-checks{display:grid;grid-template-columns:1fr 1fr;gap:16px 74px;margin-bottom:22px}.care-check{display:flex;align-items:flex-start;gap:18px;font-size:18px;line-height:1.35;cursor:pointer}.care-check input{appearance:none;width:34px;height:34px;min-width:34px;margin:0;border:3px solid #e6ad2f;background:transparent;position:relative;cursor:pointer}.care-check input:checked{background:#e6ad2f}.care-check input:checked::after{content:"✓";position:absolute;inset:0;display:grid;place-items:center;color:#000;font-weight:900;font-size:22px}.care-tell-more{display:block;margin:0 0 10px;color:#e6ad2f;font-size:18px;font-weight:800}.care-form-card textarea{min-height:120px;resize:vertical;padding:20px 28px;font-size:18px}.care-submit{width:100%;min-height:70px;margin-top:20px;border:0;border-radius:4px;background:linear-gradient(90deg,#e9ac2f,#f3b844);color:#060606;font-size:21px;font-weight:900;letter-spacing:.05em;text-transform:uppercase;cursor:pointer}.care-submit:hover{filter:brightness(1.04)}.care-privacy{margin:14px 0 0;text-align:center;color:#e7e6e3;font-size:16px}.care-privacy-strong{margin:7px 0 0;text-align:center;color:#e6ad2f;font-size:15px;letter-spacing:.05em;text-transform:uppercase}.care-sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media(max-width:900px){.care-art-frame{padding:18px}.care-form-card{padding:24px 28px;border-radius:20px}.care-checks{grid-template-columns:1fr;gap:14px}}@media(max-width:600px){.care-art-frame{padding:10px}.care-form-card{padding:22px 18px;border-radius:16px}.care-form-card h2{font-size:40px}.care-form-card .care-intro{font-size:18px}.care-form-card .care-field{height:56px;padding:0 16px;font-size:17px}.care-support-group legend{font-size:16px}.care-select-note,.care-check,.care-tell-more{font-size:16px}.care-check input{width:28px;height:28px;min-width:28px}.care-form-card textarea{min-height:110px;padding:16px;font-size:16px}.care-submit{min-height:58px;font-size:16px}.care-privacy{font-size:14px}.care-privacy-strong{font-size:12px}}
+
+/* final movement */
+.final-section{max-width:var(--measure);margin:0 auto;padding-bottom:72px}
+.final-section p{font-size:clamp(18px,1.45vw,21px);line-height:1.72;margin:0 0 25px;color:var(--soft)}
+.final-section .future{font-family:Canela,Georgia,serif;color:var(--white);font-size:clamp(27px,2.5vw,38px);line-height:1.45;margin-top:38px}
+
+.cta-wrap{border-top:1px solid var(--rule);padding:66px 28px 88px;text-align:center}
+.cta{font-family:'Arial Narrow',Impact,Haettenschweiler,sans-serif;font-stretch:condensed;font-size:clamp(52px,7vw,104px);line-height:.95;text-transform:uppercase;letter-spacing:.01em;margin:0;color:var(--white);font-weight:500}
+.cta-rule{width:120px;height:1px;background:var(--gold);margin:28px auto 0}
+
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr;min-height:auto}
+  .hero-copy{padding:54px 28px}
+  .hero-art{min-height:520px}
+  .story{padding-top:62px}
+  .story-section{margin-bottom:60px}
+  .pull{margin:64px auto;padding-left:22px}
+  .art-break{grid-template-columns:1fr;gap:32px;margin:64px auto}
+  .art-break img{justify-self:start;max-width:330px}
+  .cta-wrap{padding-top:52px}
+}
+@media (max-width:560px){
+  .hero-art{min-height:430px}
+  .story{padding-left:22px;padding-right:22px}
+  .divider{margin:54px auto}
+  .pull{margin:54px auto}
+  .cta{font-size:clamp(44px,15vw,70px)}
+}
+/* ---------- Curated Care Intelligence form section ---------- */
+  .curated-frame{
+    margin:80px auto 90px;
+    max-width:900px;
+    padding:34px;
+    border-radius:26px;
+    background:url("contact-bg-art.png") center/cover no-repeat;
+  }
+  .curated-card{
+    background:#0b0b0a;
+    border:1px solid var(--gold);
+    border-radius:20px;
+    padding:56px 60px 46px;
+    text-align:center;
+  }
+  .curated-ornament{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:18px;
+    margin:0 auto 18px;
+  }
+  .curated-ornament::before,
+  .curated-ornament::after{
+    content:"";
+    width:100px;
+    height:1px;
+    background:var(--gold);
+  }
+  .curated-ornament span{
+    width:14px;
+    height:14px;
+    background:var(--gold);
+    transform:rotate(45deg);
+  }
+  .curated-title{
+    font-family:Georgia,"Times New Roman",serif;
+    font-weight:700;
+    font-size:clamp(2.1rem,4.4vw,3.4rem);
+    color:var(--gold);
+    margin:0 0 14px;
+  }
+  .curated-sub{
+    font-family:"Source Sans 3",sans-serif;
+    font-size:1.15rem;
+    color:#fff;
+    margin:0 0 30px;
+  }
+  #curated-kajabi-form{
+    width:100%;
+    max-width:100%;
+    margin:0 auto;
+    text-align:left;
+  }
+  #curated-kajabi-form .kajabi-form__title,
+  #curated-kajabi-form .kajabi-form__subtitle{
+    display:none !important;
+  }
+
+  /* Force Kajabi's embed to render inline in the page instead of as its
+     default fixed full-screen popup/modal (same fix used elsewhere on
+     the site, e.g. about.css, for this exact form widget). */
+  .kajabi-modal{
+    display:block !important;
+    position:unset !important;
+    background:transparent !important;
+  }
+  .kajabi-modal__close{
+    display:none !important;
+  }
+  .care-form-card {
+    border: 3px solid #e6ad2f !important;
+}
+  #kajabi-form.kajabi-form--inline{
+    padding-inline: 0 !important;
+    padding-block: 0px !important;
+  }
+  body .kajabi-form__content input, .kajabi-form__content select {
+    border: 1.5px solid #e6ad2f !important;
+    border-radius: 0 !important;
+    height: 75px !important;
+    padding: 0 30px !important;
+    font-size: 20px !important;
+}
+  .kajabi-modal__content{
+    margin:0 !important;
+    max-width:100% !important;
+    padding:0 !important;
+    background:#0b0b0a !important;
+  }
+  .kajabi-form__content{
+    margin:0 !important;
+    max-width:100% !important;
+    padding:0 !important;
+    background:#0b0b0a !important;
+  }
+  .email-field.kajabi-form__form-item{
+    margin-bottom: 45px !important;
+  }
+  #kajabi-form .kajabi-form__form-item.checkbox-field input[type=checkbox]+span:after{
+    top: 19px !important;
+    left: 12px !important;
+    width: 14px !important;
+    height: 10px !important;
+  }
+  .kajabi-form__content input,
+  .kajabi-form__content select{
+    min-height:58px;
+    border-radius:6px !important;
+    color:#fff !important;
+    opacity:1 !important;
+    background:#151515 !important;
+    border:1px solid rgba(230,178,74,.55) !important;
+  }
+  .kajabi-form__content input::placeholder{
+    opacity:.6;
+    color:#fff !important;
+    font-size: 20px !important;
+    font-weight: 300 !important
+  }
+  .kajabi-form__content textarea{
+    padding:12px 18px;
+    color:#fff !important;
+    opacity:1 !important;
+    background:#151515 !important;
+    border:1px solid rgba(230,178,74,.55) !important;
+    border-radius:6px !important;
+  }
+  #kajabi-form .kajabi-form__form-item textarea {
+    height: 100px;
+    margin: 25px 0 0 0;
+    border-radius: 0 !important;
+    border: 1.5px solid #e6ad2f !important;
+    border-radius: 0 !important;
+    padding: 15px 20px !important;
+    font-size: 20px !important;
+}
+  .kajabi-form__btn{
+    background:var(--gold) !important;
+    color:#080808 !important;
+    min-height:54px !important;
+    padding:0 26px !important;
+    text-decoration:none !important;
+    text-transform:uppercase !important;
+    font-size:.76rem !important;
+    font-weight:900 !important;
+    letter-spacing:.13em !important;
+    border:1px solid var(--gold) !important;
+    width:100%;
+  }
+  .checkbox-field.kajabi-form__form-item .text{
+    color:#fff;
+    font-size: 20px !important;
+  }
+  .curated-privacy{
+    margin-top:10px;
+    font-size:.95rem;
+    color:#fff;
+    text-align: center;
+  }
+  .care-art-frame {
+    border-right: 5px solid #e6ad2f !important;
+    border-left: 5px solid #e6ad2f !important;
+}
+  #kajabi-form .kajabi-form__btn{
+    width: 100% !important;
+    min-height: 70px !important;
+    margin-top: 0 !important;
+    border: 0 !important;
+    border-radius: 4px !important;
+    background: linear-gradient(90deg, #e9ac2f, #f3b844) !important;
+    color: #060606 !important;
+    font-size: 21px !important;
+    font-weight: 900 !important;
+    letter-spacing: .05em !important;
+    text-transform: uppercase !important;
+    cursor: pointer !important;
+    border-radius: 0 !important;
+  }
+  .curated-privacy {
+    margin-top: 10px !important;
+    font-size: 17px !important;
+    color: #fff !important;
+    text-align: center !important;
+    font-weight: 100 !important;
+}
+.curated-privacy strong {
+    display: block;
+    margin-top: 6px;
+    font-size: 17px !important;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: #e6ad2f !important;
+    font-weight: 400 !important;
+}
+  #kajabi-form .kajabi-form__form-item.checkbox-field label:before {
+    border-radius: 0 !important;
+    top: 6px !important;
+    display: inline-block !important; 
+    width: 30px !important;
+    height: 30px !important;
+    margin-inline-end: 10px !important;
+    border: 4px solid #e6ad2f !important;
+}
+  @media(max-width:640px){
+    .curated-frame{padding:14px;border-radius:18px;margin:50px auto 60px}
+    .curated-card{padding:36px 26px 32px;border-radius:14px}
+  }
 </style>
 </head>
 <body>
@@ -61,66 +339,101 @@
 </div>
 </nav>
 
-<section class="hero" id="who-tiffany-is">
-  <div class="hero-copy">
-    <h1 class="name">Tiffany Golden, <span class="gold">CSA</span></h1>
-    <p class="lead">A balanced brain of boardroom brilliance, undeniable insight, and a compass of compassion and consciousness, Tiffany Golden is a Founder on a mission to end silent suffering for two of the most precious populations at defining chapters of life:</p>
-    <div class="audience">Our aging parents. Our college students. Your people.</div>
+<section class="hero">
+  <div class="hero-grid">
+    <div class="hero-copy">
+      <div class="hero-copy-inner">
+        <h1>Tiffany Golden, <span class="gold">CSA</span></h1>
+        <p>A balanced brain of boardroom brilliance, undeniable insight, and a compass of compassion and consciousness, Tiffany Golden is a Founder on a mission to end silent suffering for two of the most precious populations at defining chapters of life:</p>
+        <p class="hero-kicker">Our aging parents. Our college students. Your people.</p>
+      </div>
+    </div>
+    <div class="hero-art"><img src="TG-Design-About.jpg" alt="Tiffany Golden"></div>
   </div>
-  <div class="hero-photo"><img src="TG-Design-About.jpg" alt="Tiffany Golden" /></div>
 </section>
 
-<section class="chapter before" id="before-everything-changed">
-  <div class="chapter-inner">
-    <p>Both struggling in silence. Unsteady. Untethered. Performing wellness as armor while unraveling beneath it. Inside systems designed to serve what presents, not decode what’s actually happening in the depths below. Not neglectful. Unaware.</p>
-    <p>A trailblazer across sports, entertainment, and consumer brands, recognized by Rolling Stone, Billboard, SPIN, The Hollywood Reporter, and the Los Angeles Times, Tiffany was shaping what’s now commonplace before it had buy-in or believers.</p>
+<main class="story">
+  <section class="story-section">
+    <p class="lead">Both struggling in silence. Unsteady. Untethered. Performing wellness as armor while unraveling beneath it. Inside systems designed to serve what presents, not decode what’s actually happening in the depths below. Not neglectful. Unaware.</p>
+    <p>A trailblazer across sports, entertainment, and consumer brands, recognized by <strong><em>Rolling Stone, Billboard, SPIN, The Hollywood Reporter, and the Los Angeles Times</em></strong>, Tiffany was shaping what’s now commonplace before it had buy-in or believers.</p>
     <p>She co-architected the digital frontier of online concert ticketing when Ticketmaster needed to be convinced, and a visionary to prove it. The proof? Three words: Taylor Swift. Eras Tour. Decades later.</p>
     <p>Golden co-championed digital movie ticketing on Yahoo! to movie studios when the idea felt outlandish.</p>
     <p>Tiffany has always been fluent in what hasn’t happened yet, detecting the signal before anyone else had the receiver.</p>
-    <figure class="editorial-float"><img src="quote-inset.png" alt="Tiffany’s work doesn’t just transform organizations. It permanently rewires what leaders are capable of seeing." /></figure>
-    <div class="pull">What sets her apart is not simply her compassion or determination, it is her wisdom. She sees what others miss. Her perspective shifts your own.</div>
-    <p>In particular, Tiffany instinctively understands people. She can redesign systems around the individual rather than forcing people to adapt to the system. Her uncanny ability to translate insight into practical action is remarkable. Everything she brings to the table has tangible purpose even with intangible assets. That is why her Care Intelligence System is so powerful and why it works not only for families but also for care communities and universities seeking to provide exceptional outcomes.</p>
-    <div class="clear"></div>
-  </div>
-</section>
+  </section>
 
-<section class="chapter turning" id="the-turning-point">
-  <div class="chapter-inner">
-    <div class="pull">Then life took her somewhere no boardroom, no strategy deck, no executive retreat, and no amount of market research ever could.</div>
+  <div class="art-break">
+    <img src="quote-inset.png" alt="Tiffany’s work doesn’t just transform organizations. It permanently rewires what leaders are capable of seeing.">
+    <div class="copy"><p>What sets her apart is not simply her compassion or determination, it is her wisdom. She sees what others miss.</p></div>
+  </div>
+
+  <div class="divider"><span></span><i></i><span></span></div>
+
+  <section class="story-section">
+    <p class="lead">Life took her somewhere no boardroom, no strategy deck, no executive retreat, and no amount of market research ever could.</p>
     <p>800+ days inside the full spectrum of the eldercare-aging care system alongside her father, the unexpected out-of-home move, VA, assisted living, skilled nursing, inpatient rehab, hospice to passing, while supporting her mother aging in place, and experiencing university gaps while her daughter assimilated into college.</p>
     <p>What she experienced wasn’t a lack of care, effort, or intention. It was something far more consequential:</p>
-    <div class="signal">Critical human signals, missed at the moments that matter most, because an entire architecture was missing.</div>
+  </section>
+
+  <aside class="pull pull-sm"><p>Critical human signals, missed at the moments that matter most, because an entire architecture was missing.</p></aside>
+
+  <section class="story-section">
     <p>Tiffany witnessed firsthand the same dynamics and blindspots playing out on college campuses, regardless of large public university or small private university settings. Not a matter of resources, but systems not designed to see, reveal, and protect.</p>
     <p>She didn’t just detect the patterns. She became the only person equipped to decode and prevent the catastrophic gaps.</p>
-    <p>Tiffany doesn’t operate off surface signals. She sees the misalignments. The micro-shifts. The patterns hiding in plain sight that nobody else knows to look for. The goldmines being overlooked… and the landmines already in motion.</p>
-  </div>
-</section>
+    <p><strong>Tiffany doesn’t operate off surface signals. She sees the misalignments. The micro-shifts.</strong> The barriers to access, nobody else knows to look for. The goldmines being overlooked… and the landmines in motion.</p>
+  </section>
 
-<section class="chapter built" id="what-she-built">
-  <div class="chapter-inner">
-    <div class="pull">What she built from those 800+ days isn’t merely a framework of meaningful methodologies. It’s an entirely new category: Consciousness Intelligence.</div>
+  <div class="divider"><span></span><i></i><span></span></div>
+
+  <section class="story-section">
+    <p class="lead">What she built from those 800+ days isn’t merely a framework of meaningful methodologies. It’s an entirely new category: <strong><em>Actionable Awareness Intelligence™</em></strong>.</p>
     <p>A frequency of awareness that no system, no intake form, no algorithm, and no AI was ever built to see.</p>
-    <p>The awareness that lives beneath data, beneath dashboards, beneath the surface every system was designed to serve. The signal no algorithm detects. The dimension every system overlooks. The one everything actually depends on.</p>
+    <p><strong>The awareness that lives beneath data, beneath dashboards, beneath the surface every system was designed to serve. The signal no algorithm detects. The dimension every system overlooks. The one everything actually depends on.</strong></p>
     <p>This is the work she was always moving toward, and didn’t know it until she arrived.</p>
-    <p>Today, through Golden Strategy, Tiffany partners with C-suite leaders, care organizations, and university presidents and deans who prioritize their people over their process and recognize hidden doesn’t mean harmless.</p>
+  </section>
+
+  <aside class="pull pull-sm"><p>Today, Tiffany partners with C-suite leaders, care organizations, and university presidents and deans who prioritize their people over their process and recognize hidden doesn’t mean harmless.</p></aside>
+
+  <section class="power-block" aria-label="Executive impact highlight">
     <p>She identifies the unseen forces driving disengagement, burnout, instability, and loss, and recalibrates systems around the human being inside them.</p>
-    <div class="signal">Not theoretically. Operationally. Measurably.</div>
+    <p class="operational">Not theoretically. Operationally. Measurably.</p>
     <p>She pinpoints it. She transforms it. No costly, intricate system redesigns: instead an immediate human intelligence layer.</p>
-    <p>Her proprietary intelligence architectures—Actionable Awareness™, Care Intelligence™, Golden Lens™ GPS, and Student Elevation Architecture™—expose and resolve what every system hasn’t been built to detect nor protect.</p>
+  </section>
+
+  <section class="story-section">
+    <p>Her proprietary intelligence architectures—<strong><em>Actionable Awareness Intelligence™</em></strong>, <strong><em>Care Intelligence System™</em></strong>, <strong><em>Golden Lens GPS ©</em></strong>, and <strong>Student Elevation Architecture™</strong>—expose and resolve what every system hasn’t been built to detect nor protect.</p>
     <p>With 30 years forged at the intersection of strategy, human behavior, leadership, and lived experience, she has created proprietary intelligence architectures that don’t exist anywhere else in the world.</p>
-    <p>Her 2026 prescriptive The Five Box Method Care Intelligence System For Moving Aging Parents, on-demand masterclasses, keynotes, and team training will expand this work.</p>
-  </div>
-</section>
+    <p>Her 2026 prescriptive <strong><em>The Five Box Method Care Intelligence System For Moving Aging Parents™</em></strong>, on-demand masterclasses, keynotes, and team training will expand this work.</p>
+  </section>
 
-<section class="chapter future" id="the-future">
-  <div class="chapter-inner">
-    <div class="pull">The next evolution is already in motion.</div>
+  <div class="divider"><span></span><i></i><span></span></div>
+
+  <section class="final-section">
+    <p class="future">The next evolution is already in motion.</p>
     <p>Imagine transformative app technology that reflects human depth. The ones that see deepest. Not AI that mimics awareness. Intelligent awareness architected around the human being inside it.</p>
-    <div class="signal">This is the platform being built to end silent suffering and level the epidemic of loneliness.</div>
-    <div class="lets"><img src="lets-get-started.png" alt="LET’S GET STARTED" /></div>
-  </div>
+    <p>This is the platform being built to end silent suffering and level the epidemic of loneliness.</p>
+  </section>
+</main>
+
+<section class="cta-wrap">
+  <h2 class="cta">LET’S TRANSFORM</h2>
+  <div class="cta-rule"></div>
 </section>
 
+<section class="care-form-section" id="curated-care-intelligence">
+  <main class="care-art-frame">
+    <section class="care-form-card" aria-labelledby="care-form-title">
+      <div class="care-ornament" aria-hidden="true"><span></span></div>
+      <h2 id="care-form-title">Curated Care Intelligence</h2>
+      <p class="care-intro">Introduce yourself &amp; how I can help.</p>
+      <!-- Developer: connect this form to Kajabi and replace action/method as required. -->
+   <script src="https://tiffany-golden.mykajabi.com/forms/2149689248/embed.js"></script>
+  <div class="curated-privacy">
+      Your information is kept strictly confidential.
+      <strong>We protect your privacy as much as you protect your people.</strong>
+    </div>
+    </section>
+  </main>
+</section>
 <footer>
       <div class="wrap footer-inner footer-v58">
         <div class="footer-brand">
